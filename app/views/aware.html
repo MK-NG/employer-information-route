@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+   
+
+{% block pageTitle %}
+  Are you aware of the current government-funded education and skills employability schemes available to you?
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    {% if data['cya'] == 'true' %}
+      <form method="post" action="summary"> 
+    {% else %}
+      <form method="post" action="aware-answer"> 
+    {% endif %}
+
+        {{ govukRadios({
+          idPrefix: "aware",
+          name: "aware",
+          fieldset: {
+            legend: {
+              text: "Are you aware of the current government-funded education and skills employability schemes available to you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: true if data['aware'] == 'yes'
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: true if data['aware'] == 'no'
+            }
+          ]
+        }) }}
+
+       
+      
+      {{ govukButton({
+        text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

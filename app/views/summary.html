@@ -1,0 +1,115 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Based on your answers
+{% endblock %}
+
+{% block beforeContent %} 
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Based on your answers the following information is relevant to you </h1>
+    </div>
+    </div>
+
+      {# SIZE SECTION #}
+
+  <section class="answerGroup">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="relevantInfo">
+      <p class="govuk-body-small"> Because you said:  </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          {% if data['size'] == 'small'%}
+            You employ between 1 to 50 employees 
+          {% elif data['size'] == 'medium' %}
+            You employ between 51 and 100 employees
+          {% else %}
+            You employ more than 101 employees
+          {% endif %}
+        </li>
+      </ul>
+      <a href="business-size?cya=true" class="govuk-link"> Change this </a>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <p>
+      {% if data['size'] == 'small' %}
+      Info based on small business size
+      {% elif data['size'] == 'medium' %}
+      Info based on medium business size
+      {% else %}
+      Info based on large business size
+      {% endif %}
+    <p>  
+  </div>
+</div>
+      </section>
+
+      {# MOTIVATION SECTION #}
+
+<section class="answerGroup">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <div class="relevantInfo">
+      <p> Because you said your motivation was:  </p>
+      <ul class="govuk-list govuk-list--bullet">
+        {% for motivation in data['motivations'] %}
+        <li>
+          {% if motivation == 'diversity' %}
+            to increase general diversity and inclusion within the workforce
+          {% elif motivation == 'community' %}
+            to support the local community
+          {% elif motivation == 'governmentAlign' %}
+            to supporting the government to align your organisation with a policy interest
+          {% elif motivation == 'longTermExpansion' %}
+            long term workforce expansion ambitions
+          {% elif motivation == 'shortTermExpansion' %}
+          address immediate workforce expansion needs
+          {% elif motivation == 'governmentCustomer' %}
+            to support the government as a customer of your organisation
+          {% elif motivation == 'developTalent' %}
+            As a way to develop and retain specialised capability and future talent
+          {% elif motivation == 'reputation' %}
+            reputational enhancement
+          {% elif motivation == 'diversification' %}
+            talent pool diversification
+          {% elif motivation == 'fill' %}  
+            to fill existing vacancies 
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      
+      <a href="motivations?cya=true"  class="govuk-link"> Change this </a>
+    
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <p>
+      {% if (data['motivations']|includes('diversity')) and (data['motivations']|includes('longTermExpansion')) %}
+      Diversity and long term expansion selected
+      {% else %}
+      Other information not related to diversity 
+      {% endif %}
+    <p>  
+  </div>
+</div>
+      </section>
+
+
+
+{% endblock %}

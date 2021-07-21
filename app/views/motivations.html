@@ -1,0 +1,104 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ How long does your organisation want the employability scheme to last?
+{% endblock %}
+
+{% block beforeContent %} 
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <form method="post" action="summary"> 
+
+  {{ govukCheckboxes({
+    idPrefix: "motivations",
+    name: "motivations",
+    fieldset: {
+      legend: {
+        text: "What are your motivations for exploring government-funded employability schemes? ",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "Select all that apply"
+    },
+    items: [
+      {
+        value: "diversity",
+        text: "To increase general diversity and inclusion within the workforce",
+        checked: true if data['motivations'] | includes('diversity')
+      },   
+      {
+        value: "community",
+        text: "To support the local community",
+        checked: true if data['motivations'] | includes('community')
+      },
+      {
+        value: "governmentAlign",
+        text: "To supporting the government to align your organisation with a policy interest",
+        checked: true if data['motivations'] | includes('governmentAlign')
+      },
+      {
+        value: "longTermExpansion",
+        text: "Long term workforce expansion ambitions",
+        checked: true if data['motivations'] | includes('longTermExpansion')
+      },
+      {
+        value: "shortTermExpansion",
+        text: "Immediate workforce expansion needs",
+        checked: true if data['motivations'] | includes('shortTermExpansion')
+      },
+      {
+        value: "governmentCustomer",
+        text: "To support the government as a customer of your organisation",
+        checked: true if data['motivations'] | includes('governmentCustomer')
+      },
+      {
+        value: "developTalent",
+        text: "As a way to develop and retain specialised capability and future talent",
+        checked: true if data['motivations'] | includes('developTalent')
+      },
+      {
+        value: "reputation",
+        text: "Reputational enhancement",
+        checked: true if data['motivations'] | includes('reputation')
+      },
+      {
+        value: "diversification",
+        text: "Talent pool diversification",
+        checked: true if data['motivations'] | includes('diversification')
+      },
+      {
+        value: "fill",
+        text: "To fill existing vacancies ",
+        checked: true if data['motivations'] | includes('fill')
+      }
+    ]
+  }) }}
+      {{ govukButton({
+        text: "Continue"
+        }) }}
+
+
+{{ govukInsetText({
+  text: "Do we want other? I know we can't show results based but might be good data collection"
+}) }}
+
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

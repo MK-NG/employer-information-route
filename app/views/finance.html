@@ -1,0 +1,58 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ Are you willing to run a scheme that requires additional financial investment?
+{% endblock %}
+
+{% block beforeContent %} 
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="motivations"> 
+
+     {{ govukRadios({
+       idPrefix: "finance",
+       name: "finance",
+       fieldset: {
+         legend: {
+           text: "Are you willing to run a scheme that requires additional financial investment?",
+           isPageHeading: true,
+           classes: "govuk-fieldset__legend--l"
+         }
+       },
+       hint: {
+         text: "For example, you are willing to pay the national minimum wage or for training, equipment exam costs."
+       },
+       items: [
+         {
+           value: "yes",
+           text: "Yes",
+           checked: true if data['finance'] == 'yes'
+         },
+          {
+           value: "no",
+           text: "No",
+           checked: true if data['finance'] == 'no'
+         }
+       ]
+     }) }}
+
+      {{ govukButton({
+        text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

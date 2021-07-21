@@ -7,6 +7,17 @@ module.exports = function (env) {
    */
   var filters = {}
 
+
+	filters.includes = (arrayOfStrings, testString) => {
+		if (Array.isArray(arrayOfStrings)) {
+			if (arrayOfStrings.indexOf(testString) != -1) {
+				return true
+			}
+		}
+		return false
+	}
+
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

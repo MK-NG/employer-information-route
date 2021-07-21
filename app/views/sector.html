@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What sector does your business operate in? 
+{% endblock %}
+
+{% block beforeContent %} 
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="length"> 
+
+  
+
+        <h1 class="govuk-heading-l">
+          What sector does your business operate in? 
+        </h1>
+
+         
+
+        {{ govukInput({
+          id: "sector",
+          name: "sector",        
+          value: "Engineering"
+        }) }}
+        
+
+
+      {{ govukButton({
+        text: "Continue"
+        }) }}
+
+        {{ govukInsetText({
+          text: "What is the best way to display options to users. Should we UR alternatives? Autocomplete? Radio buttons? Drop down (pls not)?"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
