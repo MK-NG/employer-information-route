@@ -20,9 +20,12 @@
     <div class="govuk-grid-column-two-thirds">
       <form method="post" action="finance"> 
 
-       {{ govukRadios({
+       {{ govukCheckboxes({
          idPrefix: "length",
          name: "length",
+         hint: {
+           text: 'Select all that apply'
+         },
          fieldset: {
            legend: {
              text: "How long does your organisation want the employability scheme to last?",
@@ -33,17 +36,17 @@
          items: [
            {
              value: "short",
-             text: "6 weeks or less",
+             text: "Up to 3 months",
              checked: true if data['length'] == 'short'
            },
             {
              value: "medium",
-             text: "6 months or less",
+             text: "3 months to a year",
              checked: true if data['length'] == 'medium'
            },
             {
              value: "long",
-             text: "Up to 1 year or more",
+             text: "A year or more",
              checked: true if data['length'] == 'long'
            }
          ]
