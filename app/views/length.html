@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- How long does your organisation want the employability scheme to last?
+How long would you want the work placement or scheme to last?
 {% endblock %}
 
 {% block beforeContent %} 
@@ -18,7 +18,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="finance"> 
+
+     {% if data['cya'] == 'true' %}
+      <form method="post" action="summary"> 
+    {% else %}
+      <form method="post" action="motivations"> 
+    {% endif %}
 
        {{ govukCheckboxes({
          idPrefix: "length",
@@ -28,7 +33,7 @@
          },
          fieldset: {
            legend: {
-             text: "How long does your organisation want the employability scheme to last?",
+             text: "How long would you want the work placement or scheme to last?",
              isPageHeading: true,
              classes: "govuk-fieldset__legend--l"
            }
@@ -36,19 +41,24 @@
          items: [
            {
              value: "short",
-             text: "Up to 3 months",
-             checked: true if data['length'] == 'short'
+             text: "Up to 4 months",
+             checked: true if data['length'] | includes('short')
            },
             {
              value: "medium",
-             text: "3 months to a year",
-             checked: true if data['length'] == 'medium'
+             text: "4 months to 12 months",
+             checked: true if data['length'] | includes('medium')
            },
             {
              value: "long",
-             text: "A year or more",
-             checked: true if data['length'] == 'long'
-           }
+             text: "More than a year",
+             checked: true if data['length'] | includes('long')
+           },
+      {
+          value: "notSure",
+          text: "Not sure",
+          checked: true if data['length'] | includes('notSure')
+        }
          ]
        }) }}
 
@@ -59,5 +69,29 @@
       </form>
     </div>
   </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+<script>
+
+
+
+    $('.govuk-checkboxes .govuk-checkboxes__item:nth-child(4)').before($('<p class="govuk-!-margin-top-4">or</p>'))
+
+    $('.govuk-checkboxes .govuk-checkboxes__item:nth-child(5) input').on('change', function() {
+        if ($(this).is(':checked')) {
+            $('.govuk-checkboxes .govuk-checkboxes__item:not(.govuk-checkboxes__item:nth-child(5)) input').prop('checked', false)           
+        }
+    })
+
+    $('.govuk-checkboxes .govuk-checkboxes__item:not(.govuk-checkboxes__item:nth-child(5)) input').on('change', function() {
+        if ($(this).is(':checked')) {
+            $('.govuk-checkboxes .govuk-checkboxes__item:nth-child(5) input').prop('checked', false)
+        }
+    })
+
+</script>
 
 {% endblock %}

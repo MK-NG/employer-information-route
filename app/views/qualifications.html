@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Why are government schemes of interest to you?
+Approximately what minimum level qualifications do you require of the person entering into the scheme?
 {% endblock %}
 
 {% block beforeContent %} 
@@ -19,46 +19,34 @@ Why are government schemes of interest to you?
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     
-      {% if data['cya'] == 'true' %}
       <form method="post" action="summary"> 
-    {% else %}
-      <form method="post" action="finance"> 
-    {% endif %}
 
-  {{ govukCheckboxes({
-    idPrefix: "motivations",
-    name: "motivations",
+  {{ govukRadios({
+    idPrefix: "qualifications",
+    name: "qualifications",
     fieldset: {
       legend: {
-        text: "Why are government schemes of interest to you?",
+        text: "Approximately what minimum level qualifications do you require of the person entering into the scheme?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
     },
-    hint: {
-      text: "Select all that apply"
-    },
     items: [
       {
-        value: "train",
-        text: "To train someone up into a full time role",
-        checked: true if data['motivations'] | includes('train')
+        value: "none",
+        text: "No qualification requirements",
+        checked: true if data['qualifications'] | includes('none')
       },   
       {
-        value: "unpaid",
-        text: "To offer someone an unpaid work placement opportunity",
-        checked: true if data['motivations'] | includes('unpaid')
+        value: "levelOneTwo",
+        text: "Level 1-2 (GCSEs)",
+        checked: true if data['qualifications'] | includes('levelOneTwo')
       },
       {
-        value: "diversify",
-        text: "To diversify our workforce or for Corporate and Social Responsibility",
-        checked: true if data['motivations'] | includes('diversify')
-      },
-      {
-          value: "notSure",
-          text: "Not sure",
-          checked: true if data['motivations'] | includes('notSure')
-        }
+        value: "level3",
+        text: "Level 3 (A Level or Diploma) or higher",
+        checked: true if data['motivations'] | includes('levelThree')
+      }
     ]
   }) }}
       {{ govukButton({

@@ -18,9 +18,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form method="post" action="motivations"> 
 
-     {{ govukRadios({
+      {% if data['cya'] == 'true' %}
+      <form method="post" action="summary"> 
+    {% else %}
+      <form method="post" action="qualifications"> 
+    {% endif %}
+
+     {{ govukCheckboxes({
        idPrefix: "finance",
        name: "finance",
        fieldset: {
@@ -30,20 +35,22 @@
            classes: "govuk-fieldset__legend--l"
          }
        },
-       hint: {
-         text: "For example, you are willing to pay the national minimum wage or for training, equipment exam costs."
-       },
        items: [
          {
-           value: "yes",
-           text: "Yes",
-           checked: true if data['finance'] == 'yes'
+           value: "unpaid",
+           text: "I’m willing to offer an unpaid placement",
+           checked: true if data['finance'] | includes('unpaid')
          },
           {
-           value: "no",
-           text: "No",
-           checked: true if data['finance'] == 'no'
-         }
+           value: "paid",
+           text: "I'm willing to pay at least minimum wage",
+           checked: true if data['finance'] | includes('paid')
+         },
+      {
+          value: "notSure",
+          text: "Not sure",
+          checked: true if data['finance'] | includes('notSure')
+        }
        ]
      }) }}
 
@@ -54,5 +61,30 @@
       </form>
     </div>
   </div>
+
+{% endblock %}
+
+
+{% block pageScripts %}
+
+<script>
+
+
+
+    $('.govuk-checkboxes .govuk-checkboxes__item:nth-child(3)').before($('<p class="govuk-!-margin-top-4">or</p>'))
+
+    $('.govuk-checkboxes .govuk-checkboxes__item:nth-child(4) input').on('change', function() {
+        if ($(this).is(':checked')) {
+            $('.govuk-checkboxes .govuk-checkboxes__item:not(.govuk-checkboxes__item:nth-child(4)) input').prop('checked', false)           
+        }
+    })
+
+    $('.govuk-checkboxes .govuk-checkboxes__item:not(.govuk-checkboxes__item:nth-child(4)) input').on('change', function() {
+        if ($(this).is(':checked')) {
+            $('.govuk-checkboxes .govuk-checkboxes__item:nth-child(4) input').prop('checked', false)
+        }
+    })
+
+</script>
 
 {% endblock %}
