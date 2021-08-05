@@ -22,7 +22,7 @@
     </div>
     </div>
 
-    {% if (data['length'] | includes('medium')) or (data['length'] | includes('long')) and (data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify')) and (data['finance'] | includes('paid')) %}
+    {% if ((data['length'] | includes('medium')) or (data['length'] | includes('long'))) and ((data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify'))) and (data['finance'] | includes('paid')) %}
         Apprenticeships <br>
     {% endif %}
 
@@ -30,11 +30,11 @@
       Traineeships <br>
     {% endif %}
 
-    {% if (data['finance'] | includes('paid')) and (data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo')  %}
+    {% if (data['finance'] | includes('paid')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))  %}
       T Levels placement <br>
     {% endif %}
 
-    {% if (data['length'] | includes('short')) and (data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo')   %}
+    {% if (data['length'] | includes('short')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))   %}
      Bootcamps <br>
     {% endif %}
 
