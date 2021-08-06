@@ -35,17 +35,17 @@ Approximately what minimum level qualifications do you require of the person ent
       {
         value: "none",
         text: "No qualification requirements",
-        checked: true if data['qualifications'] | includes('none')
+        checked: true if data['qualifications'] == 'none'
       },   
       {
         value: "levelOneTwo",
         text: "Level 1-2 (GCSEs)",
-        checked: true if data['qualifications'] | includes('levelOneTwo')
+        checked: true if data['qualifications'] == 'levelOneTwo'
       },
       {
         value: "level3",
         text: "Level 3 (A Level or Diploma) or higher",
-        checked: true if data['motivations'] | includes('levelThree')
+        checked: true if data['motivations'] == 'levelThree'
       }
     ]
   }) }}

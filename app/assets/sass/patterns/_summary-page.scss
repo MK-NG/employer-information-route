@@ -8,8 +8,17 @@
 }
 
 
-.relevantInfo {
-  min-height: 150px;
-  padding-right: 30px;
-  border-right: 3px solid #104F75
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.placement-header {
+  background-color: #104F75;
+  color: white;
+  padding: 20px;
+}
+
+.no-wrap {
+  white-space: nowrap
 }
