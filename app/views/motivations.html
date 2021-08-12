@@ -30,7 +30,7 @@ Why are government schemes of interest to you?
     name: "motivations",
     fieldset: {
       legend: {
-        text: "Why are government schemes of interest to you?",
+        text: "What has motivated you to consider government-funded training placements or employment schemes?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--l"
       }
@@ -41,7 +41,7 @@ Why are government schemes of interest to you?
     items: [
       {
         value: "train",
-        text: "To train someone up into a full time role",
+        text: "To help train someone up into a full-time role",
         checked: true if data['motivations'] | includes('train')
       },   
       {
@@ -51,7 +51,7 @@ Why are government schemes of interest to you?
       },
       {
         value: "diversify",
-        text: "To diversify our workforce or for Corporate and Social Responsibility",
+        text: "To diversify our workforce or for corporate and social responsibility",
         checked: true if data['motivations'] | includes('diversify')
       },
       {

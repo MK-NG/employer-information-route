@@ -2,35 +2,26 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Employer questions
+ Find training and work placement schemes for your business 
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Title hello
+      <h1 class="govuk-heading-l">
+        Find training and work placement schemes for your business 
       </h1>
-      <p>
-        Employer questions to help route them to information that is relevant to them about government-funded skills and education programs.
-      </p>
-      <p> Use this service to: </p>
-     <ul class="govuk-list govuk-list--bullet">
-       <li>
-         List items
-       </li>
-       <li>
-         List item
-       </li>
-       <li>
-         List item
-       </li>
-     </ul>
+
+      <p class="govuk-!-padding-bottom-6">
+        Use this service to determine which type of government-funded skills and education training is suitable for your business. 
+        Find government-funded training programmes for your business in England.  
+      </p>    
+
 
     {{ govukButton({
       text: "Start now",
-      href: "length?cya=false",
+      href: "motivations?cya=false",
       isStartButton: true
     }) }}
     

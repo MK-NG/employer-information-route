@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Are you willing to run a scheme that requires additional financial investment?
+ Are you able to financially contribute to the skills and education training?
 {% endblock %}
 
 {% block beforeContent %} 
@@ -30,21 +30,24 @@
        name: "finance",
        fieldset: {
          legend: {
-           text: "Are you willing to run a scheme that requires additional financial investment?",
+           text: "Are you able to financially contribute to the skills and education training?",
            isPageHeading: true,
            classes: "govuk-fieldset__legend--l"
          }
        },
+       hint: {
+         text: 'For example, are you able to pay at least the national minimum wage and some costs such as travel expenses? '
+       },
        items: [
-         {
-           value: "unpaid",
-           text: "I’m willing to offer an unpaid placement",
-           checked: true if data['finance'] | includes('unpaid')
-         },
           {
            value: "paid",
-           text: "I'm willing to pay at least minimum wage",
+           text: "I can pay at least national minimum wage",
            checked: true if data['finance'] | includes('paid')
+         },
+         {
+           value: "unpaid",
+           text: "I can offer unpaid placements ",
+           checked: true if data['finance'] | includes('unpaid')
          },
       {
           value: "notSure",

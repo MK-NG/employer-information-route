@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-How long would you want the work placement or scheme to last?
+How long can you dedicate to a training placement or employment lasting?
 {% endblock %}
 
 {% block beforeContent %} 
@@ -22,7 +22,7 @@ How long would you want the work placement or scheme to last?
      {% if data['cya'] == 'true' %}
       <form method="post" action="summary"> 
     {% else %}
-      <form method="post" action="motivations"> 
+      <form method="post" action="finance"> 
     {% endif %}
 
        {{ govukCheckboxes({
@@ -33,7 +33,7 @@ How long would you want the work placement or scheme to last?
          },
          fieldset: {
            legend: {
-             text: "How long would you want the work placement or scheme to last?",
+             text: "How long can you dedicate to a training placement or employment lasting?",
              isPageHeading: true,
              classes: "govuk-fieldset__legend--l"
            }
@@ -51,7 +51,7 @@ How long would you want the work placement or scheme to last?
            },
             {
              value: "long",
-             text: "More than a year",
+             text: "A year or more",
              checked: true if data['length'] | includes('long')
            },
       {

@@ -2,18 +2,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- Based on your answers
+Suitable skills and education training schemes  
 {% endblock %}
 
 {% block beforeContent %} 
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "VIEW"
-  },
-  html: 'view this page in an <a class="govuk-link" href="summary-alt">alternative design</a> '
-}) }}
-
 
     {{ govukBackLink ({
         text: 'Back',
@@ -22,21 +14,143 @@
 
 {% endblock %}
 
-
-
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Placement results</h1>
-    <p> Based on your answers the following placements are recommended to fit your needs:
+   <h1 class="govuk-heading-l">Suitable skills and education training schemes </h1>
+    <p> Based on your answers, these schemes may be the most suitable: </p>
     </div>
     </div>
-    {% if ((data['length'] | includes('medium')) or (data['length'] | includes('long'))) and ((data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify'))) and (data['finance'] | includes('paid')) %}
 
-      <h2 class="govuk-heading-l ">
+      {# SIZE SECTION #}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third sticky">
+    <h2 class="govuk-heading-m"> Your answers </h2>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{# Set Length answers #}
+{% set lengthHTML %}
+    <ul class="govuk-list govuk-body-s">
+    {% for lengthAnswer in data['length'] %}
+      <li>
+      {% if lengthAnswer  == 'short' %}
+        Up to 4 months
+      {% elif lengthAnswer == 'medium' %}
+        4 months to 12 months
+      {% elif lengthAnswer == 'long' %}
+        More than a year
+      {% elif lengthAnswer == 'notSure' %}
+        Not sure
+      {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+{% endset %}
+
+{# Set motivations answers #}
+
+{% set motivationsHTML %}
+    <ul class="govuk-list govuk-body-s">
+    {% for motivation in data['motivations'] %}
+      <li>
+      {% if motivation  == 'train' %}
+        To train someone up into a full time role
+      {% elif motivation == 'unpaid' %}
+       To offer someone an unpaid work placement opportunity
+      {% elif motivation == 'diversify' %}
+        To diversify our workforce or for Corporate and Social Responsibility
+      {% elif motivation == 'notSure' %}
+        Not sure
+      {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+{% endset %}
+
+{# Set additional funding answers #}
+
+{% set fundingHTML %}
+    <ul class="govuk-list govuk-body-s">
+    {% for funding in data['finance'] %}
+      <li>
+      {% if funding  == 'unpaid' %}
+        An unpaid placement
+      {% elif funding == 'paid' %}
+       Pay at least minimum wage      
+      {% elif funding == 'notSure' %}
+        Not sure
+      {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+{% endset %}
+
+{% set qualificationHTML %}
+<p class="govuk-body-s">
+      {% if data['qualifications']  == 'none' %}
+        No qualification requirements
+      {% elif data['qualifications']  == 'levelOneTwo' %}
+       Level 1-2 (GCSEs)
+      {% elif data['qualifications']  == 'levelThree' %}
+        Level 3 (A Level or Diploma) or higher
+      {% endif %}
+</p>
+{% endset %}
+
+<h3 class="govuk-body-s">
+<strong> Length of placement </strong>
+</h3>
+<p> 
+      {{lengthHTML | safe }}
+</p>
+<a href="length?cya=true">Change </a>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h3 class="govuk-body-s">
+<strong> Interest in Government schemes </strong>
+</h3>
+<p> 
+      {{motivationsHTML | safe }}
+</p>
+<a href="#">Change </a>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h3 class="govuk-body-s">
+<strong> Additional financial investment </strong>
+</h3>
+<p> 
+      {{fundingHTML | safe }}
+</p>
+<a href="#">Change </a>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h3 class="govuk-body-s">
+<strong> Minimum qualification level </strong>
+</h3>
+<p> 
+      {{qualificationHTML | safe }}
+</p>
+<a href="#">Change </a>
+
+</div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h3 class="govuk-heading-m"> Suitable schemes </h3>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      {% if ((data['length'] | includes('medium')) or (data['length'] | includes('long'))) and ((data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify'))) and (data['finance'] | includes('paid')) %}
+
+      <h2 class="govuk-heading-l placement-header">
          Apprenticeships 
       </h2> 
+
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h3 class="govuk-heading-m">
@@ -61,7 +175,7 @@
     {% endif %}
 
     {% if (data['length'] | includes('short')) or (data['length'] | includes('medium'))  %}    
-        <h2 class="govuk-heading-l ">
+        <h2 class="govuk-heading-l placement-header">
           Traineeships 
         </h2> 
       <div class="govuk-grid-row">
@@ -90,7 +204,7 @@
 
     {% if (data['finance'] | includes('paid')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))  %}
       
-        <h2 class="govuk-heading-l ">
+        <h2 class="govuk-heading-l placement-header">
           T Levels Placement 
         </h2> 
       <div class="govuk-grid-row">
@@ -118,7 +232,7 @@
     {% endif %}
 
     {% if (data['length'] | includes('short')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))   %}
-        <h2 class="govuk-heading-l ">
+        <h2 class="govuk-heading-l placement-header">
           Bootcamps
         </h2> 
       
@@ -148,7 +262,7 @@
 
     {% if (data['length'] | includes('medium')) and (data['qualifications'] == 'none')  %}
       
-      <h2 class="govuk-heading-l ">
+      <h2 class="govuk-heading-l placement-header">
          Supported Internships
       </h2> 
       <div class="govuk-grid-row">
@@ -177,7 +291,7 @@
 
     {% if (data['length'] | includes('medium')) and (data['motivations'] | includes('train')) or (data['motivations'] | includes('unpaid')) and (data['qualifications'] == 'none')  %}
       
-      <h2 class="govuk-heading-l ">
+      <h2 class="govuk-heading-l placement-header">
          Kickstart
       </h2>  
       <div class="govuk-grid-row">
@@ -206,7 +320,7 @@
 
     {% if (data['length'] | includes('short')) and (data['finance'] | includes('unpaid')) and (data['qualifications'] == 'none') %}
       
-      <h2 class="govuk-heading-l ">
+      <h2 class="govuk-heading-l placement-header">
          SWAP
       </h2> 
       <div class="govuk-grid-row">
@@ -261,149 +375,12 @@
 
     {% endif %}
 
+    <p>  
+  </div>
+</div>
+
+     
 
 
-<h2 class="govuk-heading-l govuk-!-padding-top-9"> Your answers </h2>
-
-{# Set Length answers #}
-{% set lengthHTML %}
-    <ul class="govuk-list">
-    {% for lengthAnswer in data['length'] %}
-      <li>
-      {% if lengthAnswer  == 'short' %}
-        Up to 4 months
-      {% elif lengthAnswer == 'medium' %}
-        4 months to 12 months
-      {% elif lengthAnswer == 'long' %}
-        More than a year
-      {% elif lengthAnswer == 'notSure' %}
-        Not sure
-      {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-{% endset %}
-
-{# Set motivations answers #}
-
-{% set motivationsHTML %}
-    <ul class="govuk-list">
-    {% for motivation in data['motivations'] %}
-      <li>
-      {% if motivation  == 'train' %}
-        To train someone up into a full time role
-      {% elif motivation == 'unpaid' %}
-       To offer someone an unpaid work placement opportunity
-      {% elif motivation == 'diversify' %}
-        To diversify our workforce or for Corporate and Social Responsibility
-      {% elif motivation == 'notSure' %}
-        Not sure
-      {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-{% endset %}
-
-{# Set additional funding answers #}
-
-{% set fundingHTML %}
-    <ul class="govuk-list">
-    {% for funding in data['finance'] %}
-      <li>
-      {% if funding  == 'unpaid' %}
-        An unpaid placement
-      {% elif funding == 'paid' %}
-       Pay at least minimum wage      
-      {% elif funding == 'notSure' %}
-        Not sure
-      {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-{% endset %}
-
-{% set qualificationHTML %}
-      {% if data['qualifications']  == 'none' %}
-        No qualification requirements
-      {% elif data['qualifications']  == 'levelOneTwo' %}
-       Level 1-2 (GCSEs)
-      {% elif data['qualifications']  == 'levelThree' %}
-        Level 3 (A Level or Diploma) or higher
-      {% endif %}
-{% endset %}
-
-
-    {{ govukSummaryList({
-      rows: [
-        {
-          key: {
-            text: "Length of placement"
-          },
-          value: {
-            html: lengthHTML
-          },
-          actions: {
-            items: [
-              {
-                href: "/length?cya=true",
-                text: "Change",
-                visuallyHiddenText: "length of placement"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Why schemes interest you"
-          },
-          value: {
-            html: motivationsHTML
-          },
-          actions: {
-            items: [
-              {
-                href: "motivations?cya=true",
-                text: "Change",
-                visuallyHiddenText: "why scemes interest you"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Additional funding investment"
-          },
-          value: {
-            html: fundingHTML
-          },
-          actions: {
-            items: [
-              {
-                href: "/finance?cya=true",
-                text: "Change",
-                visuallyHiddenText: "additional funding investment"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Minimum qualification level"
-          },
-          value: {
-            html: qualificationHTML
-          },
-          actions: {
-            items: [
-              {
-                href: "qualifications",
-                text: "Change",
-                visuallyHiddenText: "minimum qualification level"
-              }
-            ]
-          }
-        }
-      ]
-    }) }}
 
 {% endblock %}
