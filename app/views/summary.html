@@ -146,63 +146,42 @@ Suitable skills and education training schemes
 
 
       {% if ((data['length'] | includes('medium')) or (data['length'] | includes('long'))) and ((data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify'))) and (data['finance'] | includes('paid')) %}
-
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
          Apprenticeships 
-      </h2> 
-
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-       
-        <p>
+      </h2>        
+        <p class="govuk-body">
           For those aged 16 or over, combines working with studying to gain skills and knowledge in a specific job. 
-Apprenticeships last at least one year, and can start at any time.
-
-
- 
-        <p>
+          Apprenticeships last at least one year, and can start at any time.
+        </p>
+        <p class="govuk-body">
           Apprentices are paid at least a minimum wage and spend 80% of the time on the job.
           For more information visit 
- 
-        <p>
-                    Visit
-
-          <a target="_blank" class="govuk-link" href="hyperlink"> Apprenticeships (opens in new tab)</a>  </h3> for more information.
-        <p>
-
-
-
-
-
         </p>
-      
-      </div>
-      </div>
+        <p class="govuk-body">
+          <a target="_blank" class="govuk-link" href="#">More information about Apprenticeships (opens in new tab)</a> 
+        </p>
+  </div>
+</div>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     {% endif %}
 
     {% if (data['length'] | includes('short')) or (data['length'] | includes('medium'))  %}    
-        <h2 class="govuk-heading-l placement-header">
-          Traineeships
-         
-      </h2> 
-
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-   
-        <p>
+        <div class="govuk-grid-column-full"> 
+          <h2 class="govuk-heading-l placement-header">
+            Traineeships    
+          </h2>    
+          <p class="govuk-body">
           A skills development programme for 16- to 24-year-olds led by a college or training provider. A programme can last from 6 weeks up to 1 year. 
-
-
-
-        <p>
-          It is not necessary to pay trainees, but employers may choose to pay expenses for transport or meals.
- 
-        <p>
-                    Visit
-
-          <a target="_blank" class="govuk-link" href="hyperlink"> Traineeships (opens in new tab)</a>  </h3> for more information.
-        <p>
+          </p>
+          <p class="govuk-body">
+            It is not necessary to pay trainees, but employers may choose to pay expenses for transport or meals.
+          </p>
+          <p class="govuk-body">         
+          <a target="_blank" class="govuk-link" href="#"> More information about Traineeships (opens in new tab)</a>
+        </p>
       </div>
       </div>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -210,26 +189,20 @@ Apprenticeships last at least one year, and can start at any time.
     {% endif %}
 
     {% if (data['finance'] | includes('paid')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))  %}
-      
-        <h2 class="govuk-heading-l placement-header">
-           Industry Placement: T Levels
-         
-      </h2> 
-
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-    
-        <p>
-For students aged 16 to 19 who’ve finished GCSEs. A 2-year qualification equivalent to 3 A levels. Students spend 9 weeks in a relevant work placement. 
-
-
-        <p>
-Payment is is not required during the placement, though some employers chose to do so. 
-        <p>
-                    Visit
-
-          <a target="_blank" class="govuk-link" href="hyperlink"> T Levels (opens in new tab)</a>   for more information.
-        <p>
+      <div class="govuk-grid-column-full"> 
+        <h2 class="govuk-heading-l placement-header">
+           Industry Placement: T Levels    
+        </h2> 
+        <p class="govuk-body">
+        For students aged 16 to 19 who’ve finished GCSEs. A 2-year qualification equivalent to 3 A levels. Students spend 9 weeks in a relevant work placement. 
+        </p>
+        <p class="govuk-body">
+        Payment is is not required during the placement, though some employers chose to do so. 
+        </p>      
+        <p class="govuk-body">   
+          <a target="_blank" class="govuk-link" href="#">More information about T Levels (opens in new tab)</a>           
+        </p>
       </div>
       </div>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -237,23 +210,19 @@ Payment is is not required during the placement, though some employers chose to 
     {% endif %}
 
     {% if (data['length'] | includes('short')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))   %}
+       <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full"> 
         <h2 class="govuk-heading-l placement-header">
-          Bootcamps
-         
-      </h2> 
-
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-   
-        <p>
-Free, flexible courses of up to 16 weeks for adults aged 19 or over. Co-designed and delivered with education providers to fit employer-demand skills at level 3 or above, and offer a guaranteed interview with the employer.
-
-        <p>
-Free of charge to the employer if they are recruiting.
-        <p>
-                    Visit
-
-          <a target="_blank" class="govuk-link" href="hyperlink"> Bootcamps (opens in new tab)</a>  for more information.
+          Bootcamps  
+        </h2>    
+        <p class="govuk-body">   
+          Free, flexible courses of up to 16 weeks for adults aged 19 or over. Co-designed and delivered with education providers to fit employer-demand skills at level 3 or above, and offer a guaranteed interview with the employer.
+        </p>
+        <p class="govuk-body">   
+        Free of charge to the employer if they are recruiting.
+        </p>
+        <p class="govuk-body">  
+          <a target="_blank" class="govuk-link" href="#"> More information about Bootcamps (opens in new tab)</a>  
         <p>
       </div>
       </div>
@@ -262,24 +231,20 @@ Free of charge to the employer if they are recruiting.
     {% endif %}
 
     {% if (data['length'] | includes('medium')) and (data['qualifications'] == 'none')  %}
-      
-      <h2 class="govuk-heading-l placement-header">
-         Supported Internships
-         
-      </h2> 
-
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-   
-        <p>
-Providing young people with additional needs the skills they need for work through learning in the workplace. 
-        <p>
-Internships are unpaid, lasting between 6 and 12 months. A qualified job coach supports interns in the workplace.
-        <p>
-                    Visit
-
-          <a target="_blank" class="govuk-link" href="hyperlink"> Supported Internships (opens in new tab)</a>  for more information.
-        <p>
+      <div class="govuk-grid-column-full"> 
+        <h2 class="govuk-heading-l placement-header">
+          Supported Internships    
+        </h2>    
+        <p class="govuk-body">
+          Providing young people with additional needs the skills they need for work through learning in the workplace. 
+        </p>
+        <p class="govuk-body">
+          Internships are unpaid, lasting between 6 and 12 months. A qualified job coach supports interns in the workplace.
+        </p>         
+        <p class="govuk-body">
+          <a target="_blank" class="govuk-link" href="#"> More information on Supported Internships (opens in new tab)</a> 
+        </p>
     </div>
     </div>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -287,23 +252,20 @@ Internships are unpaid, lasting between 6 and 12 months. A qualified job coach s
     {% endif %}
 
     {% if (data['length'] | includes('medium')) and (data['motivations'] | includes('train')) or (data['motivations'] | includes('unpaid')) and (data['qualifications'] == 'none')  %}
-      
+        <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
-         Kickstart
-         
-      </h2> 
-
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-      
-        <p>
-A scheme lasting up to 6 months, providing funding to create new jobs for 16 to 24-year-olds on Universal Credit.
-        <p>
-Funding is provided to pay for 25 hours per week at the National Minimum Wage. Employer can choose to fund additional hours        <p>
-                    Visit
-
-          <a target="_blank" class="govuk-link" href="hyperlink"> Kickstart (opens in new tab)</a>  for more information.
-        <p>
+         Kickstart  
+      </h2>       
+          <p class="govuk-body">
+        A scheme lasting up to 6 months, providing funding to create new jobs for 16 to 24-year-olds on Universal Credit.
+        </p>
+          <p class="govuk-body">
+          Funding is provided to pay for 25 hours per week at the National Minimum Wage. Employer can choose to fund additional hours      
+        </p>
+       <p class="govuk-body">
+          <a target="_blank" class="govuk-link" href="#"> More information about Kickstart (opens in new tab)</a>  
+        </p>
     </div>
     </div>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -311,23 +273,20 @@ Funding is provided to pay for 25 hours per week at the National Minimum Wage. E
     {% endif %}
 
     {% if (data['length'] | includes('short')) and (data['finance'] | includes('unpaid')) and (data['qualifications'] == 'none') %}
-      
+         <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
-         Sector-based work academy programme (SWAP)
-         
+         Sector-based work academy programme (SWAP) 
       </h2> 
-
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-    
-        <p>
+        <p class="govuk-body">
 A 6-week training scheme to help prepare unemployed adults to apply for jobs. Including a 4-week work placement and guaranteed interview with the employer.   </h3>
-        <p>
-The employer does not need to pay as the participant continues to be eligible for universal credit. <p>
-                    Visit
-
-          <a target="_blank" class="govuk-link" href="hyperlink"> SWAP (opens in new tab)</a>  for more information.
-        <p>
+        </p>
+        <p class="govuk-body">
+The employer does not need to pay as the participant continues to be eligible for universal credit. 
+</p>
+                    <p class="govuk-body">
+          <a target="_blank" class="govuk-link" href="#"> More information about SWAP (opens in new tab)</a> 
+        </p>
     </div>
     </div>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -335,23 +294,17 @@ The employer does not need to pay as the participant continues to be eligible fo
     {% endif %}
 
     {% if (data['length'] | includes('long')) and (data['motivations'] | includes('train')) and (data['finance'] | includes('paid')) and (data['qualifications'] == 'levelThree') %}
-      <h2 class="govuk-heading-l">
-        HTQs 
-      </h2> 
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h3 class="govuk-heading-m">
-          Subheading
-        </h3>
-        <p>
+      <div class="govuk-grid-column-full"> 
+       <h2 class="govuk-heading-l">
+        HTQs 
+      </h2>            
+        <p class="govuk-body">
         Donec eu nibh elementum purus sodales sagittis eget et purus. Morbi eget finibus justo. 
         Nulla euismod lorem libero, nec aliquet dui venenatis id. Sed accumsan dui sed lectus varius dignissim. 
         Donec nec augue rhoncus, egestas arcu non, dignissim nunc. Sed nec eros luctus libero suscipit ultrices.       
         </p>
-        <h3 class="govuk-heading-m">
-          Subheading
-        </h3>
-        <p>
+        <p class="govuk-body">
         Phasellus sit amet turpis est. Donec mi elit, fermentum ut odio quis, fringilla pretium purus. 
         Suspendisse commodo scelerisque massa, ut tempus nisl fermentum sit amet. Ut diam nulla, convallis eget semper a, volutpat at nunc. 
         Proin tincidunt neque in enim scelerisque, vitae semper elit tempus. 
