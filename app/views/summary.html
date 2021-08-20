@@ -144,47 +144,77 @@ Suitable skills and education training schemes
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-{% set placements =  [''] %}
 
-{# apprenticeship #}
-  {% if ((data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify'))) and ((data['length'] | includes('medium')) or (data['length'] | includes('long'))) and (data['finance'] | includes('paid')) %}
-       {% set placements = placements | append('apprenticeship') %}
-  {% endif %}
-{# traineeships #}
-  {% if (data['length'] | includes('short')) or (data['length'] | includes('medium'))  %}  
-       {% set placements = placements | append('traineeship') %}
-  {% endif %}
-{# t levels #}
-  {% if (data['motivations'] | includes('unpaid')) and ((data['length'] | includes('short')) or (data['length'] | includes('medium'))) and ((data['qualifications'] | includes('none')) or (data['qualifications'] | includes('levelOneTwo')))  %}
-       {% set placements = placements | append('tlevels') %}
-  {% endif %}
-{# bootcamps #}
-    {% if (data['length'] | includes('short') or data['length'] | includes('medium')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))   %}
-       {% set placements = placements | append('bootcamps') %}
-    {% endif %}
-{# supported internship #}
-    {% if (data['length'] | includes('medium')) and (data['qualifications'] == 'none')  %}
-       {% set placements = placements | append('supportedInternship') %}
-    {% endif %}
-{# kickstart #}
-    {% if ((data['motivations'] | includes('train')) or (data['motivations'] | includes('unpaid'))) and ((data['length'] | includes('short')) or (data['length'] | includes('medium'))) and (data['qualifications'] == 'none' or data['qualifications'] == 'levelThree')  %}
-       {% set placements = placements | append('kickstart') %}
-    {% endif %}
-{# swap #}
-    {% if (data['length'] | includes('short')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'none')) %}
-       {% set placements = placements | append('swap') %}
-    {% endif %}
-{# htqs #}
-    {% if (data['length'] | includes('long')) and (data['motivations'] | includes('train')) and (data['finance'] | includes('paid')) and (data['qualifications'] == 'levelThree') %}
-       {% set placements = placements | append('htqs') %}
-    {% endif %}
+{# set all that are not effected by users choice #}
+{% set motivationPlacements =  ['traineeship','bootcamp','supportedInternship','swap'] %}
+{% set lengthPlacements = [''] %}
+{% set fundingPlacements = ['traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap'] %}
+{# As this is a radio button, we can set all placements and remove based on users choice #}
+{% set qualificationPlacements = ['apprenticeship','traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap','htqs'] %}
+
+{# set motivation placements #} 
+
+{% if (data['motivations'] != 'unpaid') %}
+       {% set motivationPlacements = motivationPlacements | append('apprenticeship') %}
+{% endif %}
+{% if (data['motivations'] != 'diversify') %}
+       {% set motivationPlacements = motivationPlacements | append('kickstart') %}
+{% endif %}
+{% if (data['motivations'] | includes('unpaid')) or (data['motivations'] | includes('notSure')) %}
+       {% set motivationPlacements = motivationPlacements | append('tlevels') %}
+{% endif %}
+{% if (data['motivations'] | includes('train')) or (data['motivations'] | includes('notSure')) %}
+       {% set motivationPlacements = motivationPlacements | append('htqs') %}
+{% endif %}
+
+{# set length placements #}
+
+{% if (data['length'] != 'short') %}
+       {% set lengthPlacements = lengthPlacements | append('apprenticeship') %}
+{% endif %}
+{% if (data['length'] != 'long') %}
+       {% set lengthPlacements = lengthPlacements | append('traineeship') %}
+         {% set lengthPlacements = lengthPlacements | append('bootcamps') %}
+           {% set lengthPlacements = lengthPlacements | append('kickstart') %}
+{% endif %}
+{% if (data['length'] | includes('short')) or (data['length'] | includes('notSure')) %}
+       {% set lengthPlacements = lengthPlacements | append('tlevels') %}
+       {% set lengthPlacements = lengthPlacements | append('swap') %}
+{% endif %}
+{% if (data['length'] | includes('medium')) or (data['length'] | includes('notSure')) %}
+       {% set lengthPlacements = lengthPlacements | append('supportedInternship') %}
+{% endif %}
+{% if (data['length'] | includes('long')) or (data['length'] | includes('notSure')) %}
+       {% set lengthPlacements = lengthPlacements | append('htqs') %}
+{% endif %}
+
+{# set funding placements #}
+
+{% if (data['finance'] != 'unpaid') %}
+       {% set fundingPlacements = fundingPlacements | append('apprenticeship') %}
+       {% set fundingPlacements = fundingPlacements | append('htqs') %}
+{% endif %}
+
+{# set qualification placements #}
+
+{% if data['qualification'] == 'none' %}
+       {% set qualificationPlacements = qualificationPlacements | remove('htqs') %}
+{% endif %}
+{% if data['qualification'] == 'levelOneTwo' %}
+       {% set qualificationPlacements = qualificationPlacements | remove('supportedInternship') %}
+       {% set qualificationPlacements = qualificationPlacements | remove('kickstart') %}
+       {% set qualificationPlacements = qualificationPlacements | remove('swap') %}
+       {% set qualificationPlacements = qualificationPlacements | remove('htqs') %}
+{% endif %}
+{% if data['qualification'] == 'levelThree' %}
+       {% set qualificationPlacements = qualificationPlacements | remove('tlevels') %}
+       {% set qualificationPlacements = qualificationPlacements | remove('bootcamp') %}
+       {% set qualificationPlacements = qualificationPlacements | remove('supportedInternship') %}
+{% endif %}
 
 
-
-
-
-
-      {% if placements | includes('apprenticeship') %}
+{# checks if all placements contain apprenticeship #}
+      {% if (motivationPlacements | includes('apprenticeship')) and (lengthPlacements | includes('apprenticeship')) and (fundingPlacements | includes('apprenticeship')) and (qualificationPlacements | includes('apprenticeship')) %}
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
@@ -204,8 +234,7 @@ Suitable skills and education training schemes
   </div>
 </div>
     {% endif %}
-
-      {% if placements | includes('traineeship') %}
+            {% if (motivationPlacements | includes('traineeship')) and (lengthPlacements | includes('traineeship')) and (fundingPlacements | includes('traineeship')) and (qualificationPlacements | includes('traineeship')) %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full"> 
           <h2 class="govuk-heading-l placement-header">
@@ -225,7 +254,8 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-      {% if placements | includes('tlevels') %}
+                 {% if (motivationPlacements | includes('tlevels')) and (lengthPlacements | includes('tlevels')) and (fundingPlacements | includes('tlevels')) and (qualificationPlacements | includes('tlevels')) %}
+
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
         <h2 class="govuk-heading-l placement-header">
@@ -245,7 +275,9 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-      {% if placements | includes('bootcamps') %}
+
+ {% if (motivationPlacements | includes('bootcamp')) and (lengthPlacements | includes('bootcamp')) and (fundingPlacements | includes('bootcamp')) and (qualificationPlacements | includes('bootcamp')) %}
+
        <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
         <h2 class="govuk-heading-l placement-header">
@@ -265,7 +297,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-      {% if placements | includes('supportedInternship') %}
+    {% if (motivationPlacements | includes('supportedInternship')) and (lengthPlacements | includes('supportedInternship')) and (fundingPlacements | includes('supportedInternship')) and (qualificationPlacements | includes('supportedInternship')) %}
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
         <h2 class="govuk-heading-l placement-header">
@@ -285,7 +317,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-      {% if placements | includes('kickstart') %}
+    {% if (motivationPlacements | includes('kickstart')) and (lengthPlacements | includes('kickstart')) and (fundingPlacements | includes('kickstart')) and (qualificationPlacements | includes('kickstart')) %}
         <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
@@ -305,7 +337,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-      {% if placements | includes('swap') %}
+    {% if (motivationPlacements | includes('swap')) and (lengthPlacements | includes('swap')) and (fundingPlacements | includes('swap')) and (qualificationPlacements | includes('swap')) %}
          <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
@@ -325,7 +357,7 @@ The employer does not need to pay as the participant continues to be eligible fo
 
     {% endif %}
 
-      {% if placements | includes('htqs') %}
+    {% if (motivationPlacements | includes('htqs')) and (lengthPlacements | includes('htqs')) and (fundingPlacements | includes('htqs')) and (qualificationPlacements | includes('htqs')) %}
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
        <h2 class="govuk-heading-l">
@@ -335,12 +367,7 @@ The employer does not need to pay as the participant continues to be eligible fo
         Donec eu nibh elementum purus sodales sagittis eget et purus. Morbi eget finibus justo. 
         Nulla euismod lorem libero, nec aliquet dui venenatis id. Sed accumsan dui sed lectus varius dignissim. 
         Donec nec augue rhoncus, egestas arcu non, dignissim nunc. Sed nec eros luctus libero suscipit ultrices.       
-        </p>
-        <p class="govuk-body">
-        Phasellus sit amet turpis est. Donec mi elit, fermentum ut odio quis, fringilla pretium purus. 
-        Suspendisse commodo scelerisque massa, ut tempus nisl fermentum sit amet. Ut diam nulla, convallis eget semper a, volutpat at nunc. 
-        Proin tincidunt neque in enim scelerisque, vitae semper elit tempus. 
-        </p>
+        </p>      
       </div>
       </div>
 
