@@ -106,7 +106,7 @@ Suitable skills and education training schemes
 <p> 
       {{motivationsHTML | safe }}
 </p>
-<a href="#">Change </a>
+<a href="motivations?cya=true">Change </a>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 <h3 class="govuk-body-s">
@@ -123,7 +123,7 @@ Suitable skills and education training schemes
 <p> 
       {{fundingHTML | safe }}
 </p>
-<a href="#">Change </a>
+<a href="finance?cya=true">Change </a>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 <h3 class="govuk-body-s">
@@ -132,7 +132,7 @@ Suitable skills and education training schemes
 <p> 
       {{qualificationHTML | safe }}
 </p>
-<a href="#">Change </a>
+<a href="qualifications?cya=true">Change </a>
 
 </div>
 
@@ -144,8 +144,47 @@ Suitable skills and education training schemes
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+{% set placements =  [''] %}
 
-      {% if ((data['length'] | includes('medium')) or (data['length'] | includes('long'))) and ((data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify'))) and (data['finance'] | includes('paid')) %}
+{# apprenticeship #}
+  {% if ((data['motivations'] | includes('train')) or (data['motivations'] | includes('diversify'))) and ((data['length'] | includes('medium')) or (data['length'] | includes('long'))) and (data['finance'] | includes('paid')) %}
+       {% set placements = placements | append('apprenticeship') %}
+  {% endif %}
+{# traineeships #}
+  {% if (data['length'] | includes('short')) or (data['length'] | includes('medium'))  %}  
+       {% set placements = placements | append('traineeship') %}
+  {% endif %}
+{# t levels #}
+  {% if (data['motivations'] | includes('unpaid')) and ((data['length'] | includes('short')) or (data['length'] | includes('medium'))) and ((data['qualifications'] | includes('none')) or (data['qualifications'] | includes('levelOneTwo')))  %}
+       {% set placements = placements | append('tlevels') %}
+  {% endif %}
+{# bootcamps #}
+    {% if (data['length'] | includes('short') or data['length'] | includes('medium')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))   %}
+       {% set placements = placements | append('bootcamps') %}
+    {% endif %}
+{# supported internship #}
+    {% if (data['length'] | includes('medium')) and (data['qualifications'] == 'none')  %}
+       {% set placements = placements | append('supportedInternship') %}
+    {% endif %}
+{# kickstart #}
+    {% if ((data['motivations'] | includes('train')) or (data['motivations'] | includes('unpaid'))) and ((data['length'] | includes('short')) or (data['length'] | includes('medium'))) and (data['qualifications'] == 'none' or data['qualifications'] == 'levelThree')  %}
+       {% set placements = placements | append('kickstart') %}
+    {% endif %}
+{# swap #}
+    {% if (data['length'] | includes('short')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'none')) %}
+       {% set placements = placements | append('swap') %}
+    {% endif %}
+{# htqs #}
+    {% if (data['length'] | includes('long')) and (data['motivations'] | includes('train')) and (data['finance'] | includes('paid')) and (data['qualifications'] == 'levelThree') %}
+       {% set placements = placements | append('htqs') %}
+    {% endif %}
+
+
+
+
+
+
+      {% if placements | includes('apprenticeship') %}
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
@@ -166,7 +205,7 @@ Suitable skills and education training schemes
 </div>
     {% endif %}
 
-    {% if (data['length'] | includes('short')) or (data['length'] | includes('medium'))  %}    
+      {% if placements | includes('traineeship') %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full"> 
           <h2 class="govuk-heading-l placement-header">
@@ -186,7 +225,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-    {% if (data['finance'] | includes('paid')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))  %}
+      {% if placements | includes('tlevels') %}
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
         <h2 class="govuk-heading-l placement-header">
@@ -206,7 +245,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-    {% if (data['length'] | includes('short')) and ((data['qualifications'] == 'none') or (data['qualifications'] == 'levelOneTwo'))   %}
+      {% if placements | includes('bootcamps') %}
        <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
         <h2 class="govuk-heading-l placement-header">
@@ -226,7 +265,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-    {% if (data['length'] | includes('medium')) and (data['qualifications'] == 'none')  %}
+      {% if placements | includes('supportedInternship') %}
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
         <h2 class="govuk-heading-l placement-header">
@@ -246,7 +285,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-    {% if (data['length'] | includes('medium')) and (data['motivations'] | includes('train')) or (data['motivations'] | includes('unpaid')) and (data['qualifications'] == 'none')  %}
+      {% if placements | includes('kickstart') %}
         <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
@@ -266,7 +305,7 @@ Suitable skills and education training schemes
 
     {% endif %}
 
-    {% if (data['length'] | includes('short')) and (data['finance'] | includes('unpaid')) and (data['qualifications'] == 'none') %}
+      {% if placements | includes('swap') %}
          <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
       <h2 class="govuk-heading-l placement-header">
@@ -286,7 +325,7 @@ The employer does not need to pay as the participant continues to be eligible fo
 
     {% endif %}
 
-    {% if (data['length'] | includes('long')) and (data['motivations'] | includes('train')) and (data['finance'] | includes('paid')) and (data['qualifications'] == 'levelThree') %}
+      {% if placements | includes('htqs') %}
       <div class="govuk-grid-row">
       <div class="govuk-grid-column-full"> 
        <h2 class="govuk-heading-l">
