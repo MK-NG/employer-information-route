@@ -1,0 +1,104 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Traineeships
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Traineeships
+      </h1>
+
+      <p class="govuk-body">
+        A traineeship is a skills development programme that includes a work placement. 
+      </p>    
+
+      <p class="govuk-body">
+    The full programme can last from 6 weeks up to 1 year, though most traineeships last for less than 6 months.
+      </p>
+
+      <p class="govuk-body">
+        Your business needs to be able to offer at least 70 hours of a safe, meaningful, and high-quality work experience. You will work with a training provider to design the programme.
+      <p>
+
+      <p class="govuk-body">
+        The trainee will gain English, maths, digital and work-related qualifications which can lead them on to:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            An apprenticeship
+          </li>
+          <li>
+            Work
+          </li>
+          <li>
+            Further Education
+          </li>
+          <li>
+           A Kickstart placement
+          </li>
+        </ul>
+        </p>
+
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+        No cost but employers choose to pay the wages and any payments for expenses such as travel and living costs.  
+      </p>
+
+     
+        <h2 class="govuk-heading-m"> How to hire apprentices</h2>
+  <p class="govuk-body">
+  There are several steps to taking on an apprentice.
+
+<ul class="govuk-list govuk-list--number">
+  <li>
+    <a class="govuk-link" href="https://findapprenticeshiptraining.apprenticeships.education.gov.uk/">Choose an apprenticeship</a> for your business or organisation
+  </li>
+  <li>
+    <a class="govuk-link" href="https://findapprenticeshiptraining.apprenticeships.education.gov.uk/">Find an organisation</a> that offers training for the apprenticeship you’ve chosen.
+  </li>
+  <li>
+    <a class="govuk-link" href="https://www.gov.uk/take-on-an-apprentice/get-funding">Check what funding is available</a> for training and other costs to your organisation.
+  </li>
+  <li>
+  Advertise your apprenticeship - you can do this through the <a class="govuk-link" href="https://recruit.manage-apprenticeships.service.gov.uk/">recruit an apprentice service</a> or give your training provider permission to do this for you.
+  </li>
+  <li>
+  Select your apprentice and <a class="govuk-link" href="https://www.gov.uk/employing-an-apprentice/apprenticeship-agreement">make an apprenticeship agreement and commitment statement</a> with them.
+  </li>
+</ul>
+        </p>
+
+        <p class="govuk-body">
+        If you do not want to hire and train the apprentice yourself, you can use an <a class="govuk-link" href="https://www.gov.uk/government/publications/apprenticeship-training-agencies">apprenticeship training agency</a>. 
+      </p>
+        <p class="govuk-body">
+      The apprentice will be employed by the agency but will work in your organisation.
+</p>
+
+ <h2 class="govuk-heading-m"> Benefits of apprenticeships </h2>
+  <p class="govuk-body">
+        Discover if <a href="https://www.apprenticeships.gov.uk/employers/hiring-an-apprentice"> hiring an apprentice</a> is right for your business and how you can
+       <a href="https://www.apprenticeships.gov.uk/employers/upskilling-your-workforce"> upskill your workforce</a>.
+        </p>
+  
+<p class="govuk-body">
+  <a href="https://www.gov.uk/guidance/traineeship-information-for-employers">Visit the dedicated traineeships page for more information </a>
+    </p>
+    </div>
+  </div>
+
+{% endblock %}
+

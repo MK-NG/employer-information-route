@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Industry placements: T Levels
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Industry placements: T Levels
+      </h1>
+
+      <p class="govuk-body">
+        Applies to England
+      </p>    
+
+      <p class="govuk-body">
+      <a href="https://www.apprenticeships.gov.uk/employers">T levels</a> are a new qualification for students aged 16 to 19 who’ve finished GCSEs. They are a 2-year qualification and the equivalent to 3 A levels.
+      </p>
+
+      <p class="govuk-body">
+     They have been designed with employers to help young people develop the knowledge, attitude and practical skills to thrive in the workplace.
+      </p>
+
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+      No cost but employers choose to pay the wages and any payments for expenses such as travel and living costs. 
+      </p>
+
+        <h2 class="govuk-heading-m"> How to offer an industry placement</h2>
+  <p class="govuk-body">
+       Employers ready to <a href="https://www.tlevels.gov.uk/employers/next-steps">take the next steps with T Levels</a> can contact us for help with:
+       <ul class="govuk-list govuk-list--bullet">
+         <li>
+           answering questions about industry placements
+         </li>
+         <li>
+           planning and preparing to offer placements
+         </li>         
+       </ul>
+        </p>
+
+      <h2 class="govuk-heading-m"> Benefits of T Levels </h2>
+  <p class="govuk-body">
+        Find out <a href="https://www.tlevels.gov.uk/employers"> how T Levels can benefit your business</a>.
+        </p>
+
+          <p class="govuk-body">
+        Read about <a href="https://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-t-level-industry-placements?utm_source=PFJMainPage&utm_medium=Link&utm_campaign=PFJ"> how businesses are using T Levels inustry placements</a>.
+        </p>
+
+
+  
+    
+    </div>
+  </div>
+
+{% endblock %}
+

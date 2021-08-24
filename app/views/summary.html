@@ -149,7 +149,7 @@ Suitable skills and education training schemes
 {% set motivationPlacements =  ['traineeship','bootcamp','supportedInternship','swap'] %}
 {% set lengthPlacements = [''] %}
 {% set fundingPlacements = ['traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap'] %}
-{# As this is a radio button, we can set all placements and remove based on users choice #}
+{# As this is a radio button and user can't have multiple choices, we can set all placements and remove based on users choice #}
 {% set qualificationPlacements = ['apprenticeship','traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap','htqs'] %}
 
 {# set motivation placements #} 
@@ -229,7 +229,7 @@ Suitable skills and education training schemes
           For more information visit 
         </p>
         <p class="govuk-body govuk-!-margin-bottom-8">
-          <a target="_blank" class="govuk-link" href="#">More information about Apprenticeships (opens in new tab)</a> 
+          <a  class="govuk-link" href="apprenticeship">More information about Apprenticeships </a> 
         </p>
   </div>
 </div>
@@ -247,7 +247,7 @@ Suitable skills and education training schemes
             It is not necessary to pay trainees, but employers may choose to pay expenses for transport or meals.
           </p>
           <p class="govuk-body govuk-!-margin-bottom-8">         
-          <a target="_blank" class="govuk-link" href="#"> More information about Traineeships (opens in new tab)</a>
+          <a  class="govuk-link" href="traineeships"> More information about Traineeships </a>
         </p>
       </div>
       </div>
@@ -268,7 +268,7 @@ Suitable skills and education training schemes
         Payment is is not required during the placement, though some employers chose to do so. 
         </p>      
         <p class="govuk-body govuk-!-margin-bottom-8">   
-          <a target="_blank" class="govuk-link" href="#">More information about T Levels (opens in new tab)</a>           
+          <a  class="govuk-link" href="tlevels">More information about T Levels </a>           
         </p>
       </div>
       </div>
@@ -290,7 +290,7 @@ Suitable skills and education training schemes
         Free of charge to the employer if they are recruiting.
         </p>
         <p class="govuk-body govuk-!-margin-bottom-8">  
-          <a target="_blank" class="govuk-link" href="#"> More information about Bootcamps (opens in new tab)</a>  
+          <a  class="govuk-link" href="bootcamp"> More information about Bootcamps </a>  
         <p>
       </div>
       </div>
@@ -310,7 +310,7 @@ Suitable skills and education training schemes
           Internships are unpaid, lasting between 6 and 12 months. A qualified job coach supports interns in the workplace.
         </p>         
         <p class="govuk-body">
-          <a target="_blank" class="govuk-link" href="#"> More information on Supported Internships (opens in new tab)</a> 
+          <a  class="govuk-link" href="supportedinternship"> More information on Supported Internships </a> 
         </p>
     </div>
     </div>
@@ -330,7 +330,7 @@ Suitable skills and education training schemes
           Funding is provided to pay for 25 hours per week at the National Minimum Wage. Employer can choose to fund additional hours      
         </p>
        <p class="govuk-body">
-          <a target="_blank" class="govuk-link" href="#"> More information about Kickstart (opens in new tab)</a>  
+          <a class="govuk-link" href="kickstart"> More information about Kickstart</a>  
         </p>
     </div>
     </div>
@@ -350,7 +350,7 @@ A 6-week training scheme to help prepare unemployed adults to apply for jobs. In
 The employer does not need to pay as the participant continues to be eligible for universal credit. 
 </p>
                     <p class="govuk-body">
-          <a target="_blank" class="govuk-link" href="#"> More information about SWAP (opens in new tab)</a> 
+          <a class="govuk-link" href="swap"> More information about SWAP</a> 
         </p>
     </div>
     </div>
