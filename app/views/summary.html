@@ -15,385 +15,335 @@ Suitable skills and education training schemes
 {% endblock %}
 
 {% block content %}
+{# SET SCHEMES #}
+
+    {# set all that are not effected by users choice #}
+    {% set motivationPlacements =  ['traineeship','bootcamp','supportedInternship','swap'] %}
+    {% set lengthPlacements = [''] %}
+    {% set fundingPlacements = ['traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap'] %}
+    {# As this is a radio button and user can't have multiple choices, we can set all placements and remove based on users choice #}
+    {% set qualificationPlacements = ['apprenticeship','traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap','htqs'] %}
+
+    {# set motivation placements #} 
+
+    {% if (data['motivations'] != 'unpaid') %}
+          {% set motivationPlacements = motivationPlacements | append('apprenticeship') %}
+    {% endif %}
+    {% if (data['motivations'] != 'diversify') %}
+          {% set motivationPlacements = motivationPlacements | append('kickstart') %}
+    {% endif %}
+    {% if (data['motivations'] | includes('unpaid')) or (data['motivations'] | includes('notSure')) %}
+          {% set motivationPlacements = motivationPlacements | append('tlevels') %}
+    {% endif %}
+    {% if (data['motivations'] | includes('train')) or (data['motivations'] | includes('notSure')) %}
+          {% set motivationPlacements = motivationPlacements | append('htqs') %}
+    {% endif %}
+
+    {# set length placements #}
+
+    {% if (data['length'] != 'short') %}
+          {% set lengthPlacements = lengthPlacements | append('apprenticeship') %}
+    {% endif %}
+    {% if (data['length'] != 'long') %}
+          {% set lengthPlacements = lengthPlacements | append('traineeship') %}
+            {% set lengthPlacements = lengthPlacements | append('bootcamps') %}
+              {% set lengthPlacements = lengthPlacements | append('kickstart') %}
+    {% endif %}
+    {% if (data['length'] | includes('short')) or (data['length'] | includes('notSure')) %}
+          {% set lengthPlacements = lengthPlacements | append('tlevels') %}
+          {% set lengthPlacements = lengthPlacements | append('swap') %}
+    {% endif %}
+    {% if (data['length'] | includes('medium')) or (data['length'] | includes('notSure')) %}
+          {% set lengthPlacements = lengthPlacements | append('supportedInternship') %}
+    {% endif %}
+    {% if (data['length'] | includes('long')) or (data['length'] | includes('notSure')) %}
+          {% set lengthPlacements = lengthPlacements | append('htqs') %}
+    {% endif %}
+
+    {# set funding placements #}
+
+    {% if (data['finance'] != 'unpaid') %}
+          {% set fundingPlacements = fundingPlacements | append('apprenticeship') %}
+          {% set fundingPlacements = fundingPlacements | append('htqs') %}
+    {% endif %}
+
+    {# set qualification placements #}
+
+    {% if data['qualification'] == 'none' %}
+          {% set qualificationPlacements = qualificationPlacements | remove('htqs') %}
+    {% endif %}
+    {% if data['qualification'] == 'levelOneTwo' %}
+          {% set qualificationPlacements = qualificationPlacements | remove('supportedInternship') %}
+          {% set qualificationPlacements = qualificationPlacements | remove('kickstart') %}
+          {% set qualificationPlacements = qualificationPlacements | remove('swap') %}
+          {% set qualificationPlacements = qualificationPlacements | remove('htqs') %}
+    {% endif %}
+    {% if data['qualification'] == 'levelThree' %}
+          {% set qualificationPlacements = qualificationPlacements | remove('tlevels') %}
+          {% set qualificationPlacements = qualificationPlacements | remove('bootcamp') %}
+          {% set qualificationPlacements = qualificationPlacements | remove('supportedInternship') %}
+    {% endif %}
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-   <h1 class="govuk-heading-l">Suitable skills and education training schemes </h1>
-    <p> Based on your answers, these schemes may be the most suitable: </p>
-    </div>
-    </div>
-
-      {# SIZE SECTION #}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third sticky">
-    <h2 class="govuk-heading-m"> Your answers </h2>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-{# Set Length answers #}
-{% set lengthHTML %}
-    <ul class="govuk-list govuk-body-s">
-    {% for lengthAnswer in data['length'] %}
-      <li>
-      {% if lengthAnswer  == 'short' %}
-        Up to 4 months
-      {% elif lengthAnswer == 'medium' %}
-        4 months to 12 months
-      {% elif lengthAnswer == 'long' %}
-        More than a year
-      {% elif lengthAnswer == 'notSure' %}
-        Not sure
-      {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-{% endset %}
-
-{# Set motivations answers #}
-
-{% set motivationsHTML %}
-    <ul class="govuk-list govuk-body-s">
-    {% for motivation in data['motivations'] %}
-      <li>
-      {% if motivation  == 'train' %}
-        To train someone up into a full time role
-      {% elif motivation == 'unpaid' %}
-       To offer someone an unpaid work placement opportunity
-      {% elif motivation == 'diversify' %}
-        To diversify our workforce or for Corporate and Social Responsibility
-      {% elif motivation == 'notSure' %}
-        Not sure
-      {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-{% endset %}
-
-{# Set additional funding answers #}
-
-{% set fundingHTML %}
-    <ul class="govuk-list govuk-body-s">
-    {% for funding in data['finance'] %}
-      <li>
-      {% if funding  == 'unpaid' %}
-        An unpaid placement
-      {% elif funding == 'paid' %}
-       Pay at least minimum wage      
-      {% elif funding == 'notSure' %}
-        Not sure
-      {% endif %}
-      </li>
-    {% endfor %}
-    </ul>
-{% endset %}
-
-{% set qualificationHTML %}
-<p class="govuk-body-s">
-      {% if data['qualifications']  == 'none' %}
-        No qualification requirements
-      {% elif data['qualifications']  == 'levelOneTwo' %}
-       Level 1-2 (GCSEs)
-      {% elif data['qualifications']  == 'levelThree' %}
-        Level 3 (A Level or Diploma) or higher
-      {% endif %}
-</p>
-{% endset %}
-
-
-<h3 class="govuk-body-s">
-<strong> Interest in Government schemes </strong>
-</h3>
-<p> 
-      {{motivationsHTML | safe }}
-</p>
-<a href="motivations?cya=true">Change </a>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-<h3 class="govuk-body-s">
-<strong> Length of placement </strong>
-</h3>
-<p> 
-      {{lengthHTML | safe }}
-</p>
-<a href="length?cya=true">Change </a>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<h3 class="govuk-body-s">
-<strong> Additional financial investment </strong>
-</h3>
-<p> 
-      {{fundingHTML | safe }}
-</p>
-<a href="finance?cya=true">Change </a>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-<h3 class="govuk-body-s">
-<strong> Minimum qualification level </strong>
-</h3>
-<p> 
-      {{qualificationHTML | safe }}
-</p>
-<a href="qualifications?cya=true">Change </a>
-
+      <h1 class="govuk-heading-l">Suitable skills and education training schemes </h1>
+        <p> Based on your answers, these schemes may be the most suitable: </p>
+</div>
 </div>
 
 
-  <div class="govuk-grid-column-two-thirds">
-
-
-    <h3 class="govuk-heading-m"> Suitable schemes </h3>
-
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-{# set all that are not effected by users choice #}
-{% set motivationPlacements =  ['traineeship','bootcamp','supportedInternship','swap'] %}
-{% set lengthPlacements = [''] %}
-{% set fundingPlacements = ['traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap'] %}
-{# As this is a radio button and user can't have multiple choices, we can set all placements and remove based on users choice #}
-{% set qualificationPlacements = ['apprenticeship','traineeship','tlevels','bootcamp','supportedInternship','kickstart','swap','htqs'] %}
-
-{# set motivation placements #} 
-
-{% if (data['motivations'] != 'unpaid') %}
-       {% set motivationPlacements = motivationPlacements | append('apprenticeship') %}
-{% endif %}
-{% if (data['motivations'] != 'diversify') %}
-       {% set motivationPlacements = motivationPlacements | append('kickstart') %}
-{% endif %}
-{% if (data['motivations'] | includes('unpaid')) or (data['motivations'] | includes('notSure')) %}
-       {% set motivationPlacements = motivationPlacements | append('tlevels') %}
-{% endif %}
-{% if (data['motivations'] | includes('train')) or (data['motivations'] | includes('notSure')) %}
-       {% set motivationPlacements = motivationPlacements | append('htqs') %}
-{% endif %}
-
-{# set length placements #}
-
-{% if (data['length'] != 'short') %}
-       {% set lengthPlacements = lengthPlacements | append('apprenticeship') %}
-{% endif %}
-{% if (data['length'] != 'long') %}
-       {% set lengthPlacements = lengthPlacements | append('traineeship') %}
-         {% set lengthPlacements = lengthPlacements | append('bootcamps') %}
-           {% set lengthPlacements = lengthPlacements | append('kickstart') %}
-{% endif %}
-{% if (data['length'] | includes('short')) or (data['length'] | includes('notSure')) %}
-       {% set lengthPlacements = lengthPlacements | append('tlevels') %}
-       {% set lengthPlacements = lengthPlacements | append('swap') %}
-{% endif %}
-{% if (data['length'] | includes('medium')) or (data['length'] | includes('notSure')) %}
-       {% set lengthPlacements = lengthPlacements | append('supportedInternship') %}
-{% endif %}
-{% if (data['length'] | includes('long')) or (data['length'] | includes('notSure')) %}
-       {% set lengthPlacements = lengthPlacements | append('htqs') %}
-{% endif %}
-
-{# set funding placements #}
-
-{% if (data['finance'] != 'unpaid') %}
-       {% set fundingPlacements = fundingPlacements | append('apprenticeship') %}
-       {% set fundingPlacements = fundingPlacements | append('htqs') %}
-{% endif %}
-
-{# set qualification placements #}
-
-{% if data['qualification'] == 'none' %}
-       {% set qualificationPlacements = qualificationPlacements | remove('htqs') %}
-{% endif %}
-{% if data['qualification'] == 'levelOneTwo' %}
-       {% set qualificationPlacements = qualificationPlacements | remove('supportedInternship') %}
-       {% set qualificationPlacements = qualificationPlacements | remove('kickstart') %}
-       {% set qualificationPlacements = qualificationPlacements | remove('swap') %}
-       {% set qualificationPlacements = qualificationPlacements | remove('htqs') %}
-{% endif %}
-{% if data['qualification'] == 'levelThree' %}
-       {% set qualificationPlacements = qualificationPlacements | remove('tlevels') %}
-       {% set qualificationPlacements = qualificationPlacements | remove('bootcamp') %}
-       {% set qualificationPlacements = qualificationPlacements | remove('supportedInternship') %}
-{% endif %}
 
 
 {# checks if all placements contain apprenticeship #}
       {% if (motivationPlacements | includes('apprenticeship')) and (lengthPlacements | includes('apprenticeship')) and (fundingPlacements | includes('apprenticeship')) and (qualificationPlacements | includes('apprenticeship')) %}
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-full"> 
-      <h2 class="govuk-heading-l placement-header">
-         Apprenticeships 
-      </h2>        
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Apprenticeships</h2>
+          <p class="govuk-body"> 
+            For those aged 16 or over, combines working with studying to gain skills and knowledge in a specific job.
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Apprentices are paid at least a minimum wage and spend 80% of the time on the job.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Apprenticeships last at least one year, and can start at any time.
+            </p>
+          </div>              
+        </div>
         <p class="govuk-body">
-          For those aged 16 or over, combines working with studying to gain skills and knowledge in a specific job. 
-          Apprenticeships last at least one year, and can start at any time.
+          <a class="govuk-link" href="apprenticeship">Read more about apprenticeships </a>
         </p>
-        <p class="govuk-body">
-          Apprentices are paid at least a minimum wage and spend 80% of the time on the job.
-          For more information visit 
-        </p>
-        <p class="govuk-body govuk-!-margin-bottom-8">
-          <a  class="govuk-link" href="apprenticeship">More information about Apprenticeships </a> 
-        </p>
-  </div>
-</div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </div>
+    </div>
     {% endif %}
+
             {% if (motivationPlacements | includes('traineeship')) and (lengthPlacements | includes('traineeship')) and (fundingPlacements | includes('traineeship')) and (qualificationPlacements | includes('traineeship')) %}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full"> 
-          <h2 class="govuk-heading-l placement-header">
-            Traineeships    
-          </h2>    
-          <p class="govuk-body">
-          A skills development programme for 16- to 24-year-olds led by a college or training provider. A programme can last from 6 weeks up to 1 year. 
+       <div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Traineeship</h2>
+          <p class="govuk-body"> 
+            A 6-week to 12 months unpaid work placement for 16- to 24-year-olds helping you develop a loyal and talented workforce. 
           </p>
-          <p class="govuk-body">
-            It is not necessary to pay trainees, but employers may choose to pay expenses for transport or meals.
-          </p>
-          <p class="govuk-body govuk-!-margin-bottom-8">         
-          <a  class="govuk-link" href="traineeships"> More information about Traineeships </a>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                It is not necessary to pay trainees, but employers may choose to pay expenses for transport or meals.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              A programme can last from 6 weeks up to 1 year. 
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="traineeships">Read more about traineeships </a>
         </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </div>
-      </div>
+    </div>
 
     {% endif %}
 
                  {% if (motivationPlacements | includes('tlevels')) and (lengthPlacements | includes('tlevels')) and (fundingPlacements | includes('tlevels')) and (qualificationPlacements | includes('tlevels')) %}
 
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full"> 
-        <h2 class="govuk-heading-l placement-header">
-           Industry Placement: T Levels    
-        </h2> 
+       <div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Industry placements: T Levels</h2>
+          <p class="govuk-body"> 
+           For students aged 16 to 19 who’ve finished GCSEs. A 2-year qualification equivalent to 3 A levels. 
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Payment is is not required during the placement, though some employers chose to do so.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Students spend 9 weeks in a relevant work placement. 
+            </p>
+          </div>              
+        </div>
         <p class="govuk-body">
-        For students aged 16 to 19 who’ve finished GCSEs. A 2-year qualification equivalent to 3 A levels. Students spend 9 weeks in a relevant work placement. 
+          <a class="govuk-link" href="tlevels">Read more about T Levels </a>
         </p>
-        <p class="govuk-body">
-        Payment is is not required during the placement, though some employers chose to do so. 
-        </p>      
-        <p class="govuk-body govuk-!-margin-bottom-8">   
-          <a  class="govuk-link" href="tlevels">More information about T Levels </a>           
-        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </div>
-      </div>
+    </div>
+
 
     {% endif %}
 
 
  {% if (motivationPlacements | includes('bootcamp')) and (lengthPlacements | includes('bootcamp')) and (fundingPlacements | includes('bootcamp')) and (qualificationPlacements | includes('bootcamp')) %}
 
-       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full"> 
-        <h2 class="govuk-heading-l placement-header">
-          Bootcamps  
-        </h2>    
-        <p class="govuk-body">   
-          Free, flexible courses of up to 16 weeks for adults aged 19 or over. Co-designed and delivered with education providers to fit employer-demand skills at level 3 or above, and offer a guaranteed interview with the employer.
+     <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Skills Bootcamps</h2>
+          <p class="govuk-body"> 
+             Flexible courses to fast-track specialist skill development, for existing or new talent for your business.          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Free of charge to the employer if they are recruiting.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Up to 16 weeks
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="bootcamp">Read more about Skills Bootcamps </a>
         </p>
-        <p class="govuk-body">   
-        Free of charge to the employer if they are recruiting.
-        </p>
-        <p class="govuk-body govuk-!-margin-bottom-8">  
-          <a  class="govuk-link" href="bootcamp"> More information about Bootcamps </a>  
-        <p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </div>
-      </div>
+    </div>
 
     {% endif %}
 
     {% if (motivationPlacements | includes('supportedInternship')) and (lengthPlacements | includes('supportedInternship')) and (fundingPlacements | includes('supportedInternship')) and (qualificationPlacements | includes('supportedInternship')) %}
       <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full"> 
-        <h2 class="govuk-heading-l placement-header">
-          Supported Internships    
-        </h2>    
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Supported Internships</h2>
+          <p class="govuk-body"> 
+              Providing young people with additional needs the skills they need for work through learning in the workplace. A qualified job coach supports interns in the workplace.
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Internships are unpaid. 
+
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              This scheme lasts between 6 and 12 months. 
+            </p>
+          </div>              
+        </div>
         <p class="govuk-body">
-          Providing young people with additional needs the skills they need for work through learning in the workplace. 
+          <a class="govuk-link" href="supportedinternship">Read more about Supported Internships </a>
         </p>
-        <p class="govuk-body">
-          Internships are unpaid, lasting between 6 and 12 months. A qualified job coach supports interns in the workplace.
-        </p>         
-        <p class="govuk-body">
-          <a  class="govuk-link" href="supportedinternship"> More information on Supported Internships </a> 
-        </p>
-    </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </div>
     </div>
 
     {% endif %}
 
     {% if (motivationPlacements | includes('kickstart')) and (lengthPlacements | includes('kickstart')) and (fundingPlacements | includes('kickstart')) and (qualificationPlacements | includes('kickstart')) %}
+       <div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Kickstart Scheme</h2>
+          <p class="govuk-body"> 
+            A scheme lasting up to 6 months, providing funding to create new jobs for 16 to 24-year-olds on Universal Credit
+          </p>
         <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full"> 
-      <h2 class="govuk-heading-l placement-header">
-         Kickstart  
-      </h2>       
-          <p class="govuk-body">
-        A scheme lasting up to 6 months, providing funding to create new jobs for 16 to 24-year-olds on Universal Credit.
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Funding is provided to pay for 25 hours per week at the National Minimum Wage. Employer can choose to fund additional hours
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Lasting up to 6 months, providing funding to create new jobs for 16 to 24-year-olds on Universal Credit
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="kickstart">Read more about the Kickstart Scheme </a>
         </p>
-          <p class="govuk-body">
-          Funding is provided to pay for 25 hours per week at the National Minimum Wage. Employer can choose to fund additional hours      
-        </p>
-       <p class="govuk-body">
-          <a class="govuk-link" href="kickstart"> More information about Kickstart</a>  
-        </p>
-    </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </div>
     </div>
 
     {% endif %}
 
     {% if (motivationPlacements | includes('swap')) and (lengthPlacements | includes('swap')) and (fundingPlacements | includes('swap')) and (qualificationPlacements | includes('swap')) %}
-         <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full"> 
-      <h2 class="govuk-heading-l placement-header">
-         Sector-based work academy programme (SWAP) 
-      </h2> 
+       <div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Sector-based work academy programme (SWAP)</h2>
+          <p class="govuk-body"> 
+            A 6-week training scheme to help prepare unemployed adults to apply for jobs. Including a 4-week work placement and guaranteed interview with the employer. 
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                The employer does not need to pay as the participant continues to be eligible for universal credit.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              The scheme is 6 weeks long.
+            </p>
+          </div>              
+        </div>
         <p class="govuk-body">
-A 6-week training scheme to help prepare unemployed adults to apply for jobs. Including a 4-week work placement and guaranteed interview with the employer.   </h3>
+          <a class="govuk-link" href="swap">Read more about SWAP </a>
         </p>
-        <p class="govuk-body">
-The employer does not need to pay as the participant continues to be eligible for universal credit. 
-</p>
-                    <p class="govuk-body">
-          <a class="govuk-link" href="swap"> More information about SWAP</a> 
-        </p>
-    </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </div>
     </div>
 
     {% endif %}
 
     {% if (motivationPlacements | includes('htqs')) and (lengthPlacements | includes('htqs')) and (fundingPlacements | includes('htqs')) and (qualificationPlacements | includes('htqs')) %}
-      <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full"> 
-       <h2 class="govuk-heading-l placement-header">
-        Higher Technical Qualifications  
-      </h2>            
-        <p class="govuk-body">
-      Applies to England  
-        </p>      
-         <p class="govuk-body">
-      Higher Technical Qualifications (HTQ)s are level 4 or 5 qualifications (foundation degree or higher national diploma). 
+      <div class="govuk-grid-row ">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l"> Higher Technical Qualifications  </h2>
+          <p class="govuk-body"> 
+           Level 4 or 5 qualifications (foundation degree or higher national diploma). 
 
-        </p>      
-         <p class="govuk-body">
-      They align to existing occupational standards, providing learners with entry-level knowledge and allowing them to enter their chosen profession at a higher level.
-        </p>      
-         <p class="govuk-body">
-      There is no work placement element, but these qualifications are flexible to be able to study while working.
-        </p>  
-        <h3 class="govuk-heading-s">
-        Employer costs
-        </h3>    
-             <p class="govuk-body">
-     None, as the course is not affiliated with the employer.
-        </p>   
-         <h3 class="govuk-heading-s">
-        Benefits of HTQs
-        </h3>    
-             <p class="govuk-body">
-     Helps learners to pursue a vocational skill outside of work.
-        </p>   
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                    No cost, as the course is not affiliated with the employer.
+
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              The length is flexible to fit the learners needs, as you are able to study whilst working
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="htqs">Read more about HTQs </a>
+        </p>
       </div>
-      </div>
+    </div>
 
     {% endif %}
 
-    <p>  
+          {% include "./includes/smartanswers.html" %}    
+  
+
+
   </div>
 </div>
 

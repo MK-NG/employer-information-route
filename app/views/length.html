@@ -67,6 +67,11 @@ How long can you dedicate to a training placement or employment lasting?
         }) }}
 
       </form>
+
+
+      {% if data['sa'] == 'true' %}
+          {% include "./includes/smartanswers.html" %}    
+      {% endif %}
     </div>
   </div>
 

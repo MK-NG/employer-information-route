@@ -67,6 +67,11 @@ Why are government schemes of interest to you?
 
 
       </form>
+
+       {% if data['sa'] == 'true' %}
+          {% include "./includes/smartanswers.html" %}    
+      {% endif %}
+      
     </div>
   </div>
 

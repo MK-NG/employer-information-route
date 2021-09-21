@@ -55,6 +55,10 @@ Is there a minimum level of qualification that someone needs for the role?
 
 
       </form>
+
+       {% if data['sa'] == 'true' %}
+          {% include "./includes/smartanswers.html" %}    
+      {% endif %}
     </div>
   </div>
 

@@ -1,0 +1,55 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Higher Technical Qualifications (HTQs)
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Higher Technical Qualifications (HTQs)
+      </h1>
+
+      <p class="govuk-body">
+      Applies to England
+      </p>    
+
+      <p class="govuk-body">
+     Higher Technical Qualifications (HTQ)s are level 4 or 5 qualifications (foundation degree or higher national diploma). 
+      </p>
+
+      <p class="govuk-body">
+      They align to existing occupational standards, providing learners with entry-level knowledge and allowing them to enter their chosen profession at a higher level.
+      </p>
+
+      <p class="govuk-body">
+      There is no work placement element, but these qualifications are flexible to be able to study while working.
+      </p>
+
+
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+      None, as the course is not affiliated with the employer.  
+      </p>
+
+        <h2 class="govuk-heading-m"> Benefits of HTQs </h2>
+      <p class="govuk-body">
+       Helps learners to pursue a vocational skill outside of work.
+      </p>
+           </div>
+  </div>
+
+{% endblock %}
+
