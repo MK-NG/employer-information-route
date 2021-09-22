@@ -1,0 +1,85 @@
+   <section class="grey-box"> 
+       <h3 class="govuk-heading-m"> Compare schemes </h3> 
+    <div class="govuk-grid-row">
+         <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">
+    You can use this tool to compare two or more schemes in more detail, seeing their benefits, financial incenetives and cost to you as an employer.
+    </p>
+<form method="post" action="which-schemes">
+
+
+
+{% set schemes %}  
+
+    {{ govukCheckboxes({
+    idPrefix: "schemes",
+    name: "schemes",
+    classes: "govuk-checkboxes--small",
+    hint: {
+      text: "Select all that apply"
+    },
+    items: [
+      {
+        value: "apprenticeships",
+        text: "Apprenticeships",
+        checked: true if data['schemes'] | includes('apprenticeships')
+      },   
+      {
+        value: "tlevels",
+        text: "T Levels",
+        checked: true if data['schemes'] | includes('tlevels')
+      }, 
+      {
+        value: "kickstart",
+        text: "Kickstart Schemes",
+        checked: true if data['schemes'] | includes('kickstart')
+      }, 
+      {
+        value: "swap",
+        text: "SWAP",
+        checked: true if data['schemes'] | includes('swap')
+      }, 
+      {
+        value: "traineeship",
+        text: "Traineeship",
+        checked: true if data['schemes'] | includes('traineeship')
+      }, 
+      {
+        value: "skillsbootcamp",
+        text: "Skills Bootcamp",
+        checked: true if data['schemes'] | includes('skillsbootcamp')
+      }, 
+      {
+        value: "supportedinternship",
+        text: "Supported Internships",
+        checked: true if data['schemes'] | includes('supportedinternship')
+      }, 
+      {
+        value: "careleaverscovenant",
+        text: "Care-Leavers Covenant",
+        checked: true if data['schemes'] | includes('careleaverscovenant')
+      }, 
+      {
+        value: "trainingoutsideemployment",
+        text: "Training outside of Employment",
+        checked: true if data['schemes'] | includes('trainingoutsideemployment')
+      } 
+    ]
+  }) }}
+      {{ govukButton({
+        text: "Compare schemes"
+        }) }}
+
+        {% endset %}
+
+{{ govukDetails({
+     summaryText: "Which schemes would you like to compare?",
+     html: schemes
+}) }}  
+
+      </form>
+
+   
+         </div>
+         </div>
+   </section>

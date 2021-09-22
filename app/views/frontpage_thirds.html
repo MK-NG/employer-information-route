@@ -20,6 +20,7 @@ Find skills and employment schemes
     </div>   
   </div>
 
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 <ul class="govuk-list govuk-!-margin-top-5">
 
 {# apprenticeship #}
@@ -152,6 +153,14 @@ Find skills and employment schemes
    </div>  
 
 </ul>
+
+
+{% if (data['showComparisonLink'] == 'true') and (data['version'] == '1') %}
+  {% include './includes/comparison.html' %}
+{% elif (data['showComparisonLink'] == 'true') and (data['version'] == '2') %}
+  {% include './includes/comparison-onepage.html' %}
+{% endif %}
+
    </div>
   </div>
 
