@@ -21,236 +21,291 @@ Why are government schemes of interest to you?
     
      <h1 class="govuk-heading-l">
        Comparison of schemes
-     </h1>
+     </h1> 
 
-     {% set apprenticeships %}
-        <a href="apprenticeship"> Apprenticeships </a>       
-      {% endset %}
-
-      {% set tlevels %}
-        <a href="tlevels"> T Levels </a>
-      {% endset %}
-
-      {% set kickstart %}
-        <a href="kickstart"> Kickstart Schemes </a>
-      {% endset %}
-
-      {% set swap %}
-        <a href="swap"> SWAP </a>
-      {% endset %}
-
-      {% set traineeship %}
-        <a href="traineeship"> Traineeship </a>
-      {% endset %}
-
-      {% set skillsbootcamp %}
-        <a href="skillsbootcamp"> Skills Bootcamp</a>
-      {% endset %}
-
-      {% set supportedinternship %}
-        <a href="supportedinternship"> Supported Internships </a>
-      {% endset %}
-
-      {% set clc %}
-        <a href="clc"> Care-Leavers Covenant </a>
-      {% endset %}
-
-      {% set trainingoutsideofemployment %}
-        <a href="trainingoutsideofemployment"> Training outside of Employment </a>
-      {% endset %}
-
+<div class="nhsuk-table-container">
+  <table data-test="admin-participants-table" class="govuk-table nhsuk-table-responsive">
+    <thead  class="nhsuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Scheme</th>
+        <th scope="col" class="govuk-table__header">Cost</th>
+        <th scope="col" class="govuk-table__header">Benefits</th>
+        <th scope="col" class="govuk-table__header">Time</th>
+        <th scope="col" class="govuk-table__header">Financial incentives</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body nhsuk-table__body">
      
+        {# apprenticeships #}
+     {% if data['schemes'] | includes('apprenticeships') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="apprenticeship"> Apprenticeships </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     Apprentice minimum wage and 5% training contribution depending on business size
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+    You develop a motivated, skilled, and qualified workforce
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+   Minimum of 12 months employment
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    Yes
+  </td>  
+</tr>
+{% endif %}
+
+      {# Kickstart  #}
+     {% if data['schemes'] | includes('kickstart') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="kickstart"> Kickstart </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+      No costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+    Support young people to gain valuable experience and give them opportunities to start a new career in your industry
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      6-months
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    Yes
+  </td>  
+</tr>
+{% endif %}
+
+ {# Kickstart  #}
+     {% if data['schemes'] | includes('kickstart') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="traineeships"> Traineeships </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+      No cost but some employers choose to cover living expenses
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+   Helps you increase your capacity and productivity whilst developing a loyal and talented workforce
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      6-weeks to 12 months
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    Yes
+  </td>  
+</tr>
+{% endif %}
+
+ {# T Levels  #}
+     {% if data['schemes'] | includes('tlevels') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="tlevels"> Industry Placements: T Levels </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+      No cost but some employers choose to cover living expenses
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+   A learner spends 9 weeks with you at no cost
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      Short term 45-day industry placement
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    Yes
+  </td>  
+</tr>
+{% endif %}
 
 
-     {{ govukTable({
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  
-     head: [
-    {
-      text: ""
-    },
-    {
-      text: "Cost"
-    },
-    {
-      text: "Benefits"
-    },
-    {
-      text: "Time"
-    },
-    {
-      text: "Financial incentive"
-    }
-  ],
-       rows: [
-         [
-           {
-            html: apprenticeships
-           },
-           {
-             text: "Apprentice minimum wage and 5% training contribution depending on business size"
-           },
-           {
-             text: "You develop a motivated, skilled, and qualified workforce"
-           },
-           {
-             text: "Minimum of 12 months employment"
-           },
-           {
-             text: "£4000"
-           }
-         ]
-        if data['schemes'] | includes('apprenticeships') ,
-         [
-           {
-             html: tlevels
-           },
-           {
-             text: "No cost but some employers choose to cover living expenses"
-           },
-           {
-             text: "A learner spends 9 weeks with you at no cost"
-           },
-           {
-             text: "Short term 45-day industry placement"
-           },
-           {
-             text: "Yes, financial incentives are available"
-           }
-         ]
-        if data['schemes'] | includes('tlevels'), 
-        [
-           {
-              html: kickstart
-           },
-           {
-             text: " No costs"
-           },
-           {
-             text: "Support young people to gain valuable experience and help your teams gain supervisory experience"
-           },
-           {
-             text: "6-months"
-           },
-           {
-             text: "Yes, financial incentives are available"
-           }
-         ]
-        if data['schemes'] | includes('kickstart'), 
-        [
-           {
-              html: swap
-           },
-           {
-             text: "No cost, SWAP placements are entirely government-funded"
-           },
-           {
-             text: " Reduces the risks within the recruitment process whilst developing the training and skills through fully-funded pre-employment training"
-           },
-           {
-             text: "6-weeks"
-           },
-           {
-             text: "Government-funded tailored support to meet your recruitment needs"
-           }
-         ]
-        if data['schemes'] | includes('swap') , 
-        [
-           {
-              html: traineeship
-           },
-           {
-             text: "No cost but some employers choose to cover living expenses"
-           },
-           {
-             text: "Helps you increase your capacity and productivity whilst developing a loyal and talented workforce"
-           },
-           {
-             text: "6-weeks"
-           },
-           {
-             text: "Yes, financial incentives are available"
-           }
-         ]
-        if data['schemes'] | includes('traineeship') , 
-        [
-           {
-              html: skillsbootcamp
-           },
-           {
-             text: "cost content"
-           },
-           {
-             text: "Helps future-proof your business in a rapidly changing labour market and recruit staff with the right training and skills from the outset"
-           },
-           {
-             text: "16-weeks"
-           },
-           {
-             text: "Yes, financial incentives are available"
-           }
-         ]
-        if data['schemes'] | includes('skillsbootcamp') , 
-        [
-           {
-              html: supportedinternship
-           },
-           {
-             text: "cost content"
-           },
-           {
-             text: "Reduced recruitment costs whilst having an increased chance of getting the right person whilst contributing back to society"
-           },
-           {
-             text: "6 to 12-months"
-           },
-           {
-             text: "incentive content"
-           }
-         ]
-        if data['schemes'] | includes('supportedinternship'), 
-        [
-           {
-              html: clc
-           },
-           {
-             text: "cost content"
-           },
-           {
-             text: "benefit content"
-           },
-           {
-             text: "time content"
-           },
-           {
-             text: "incentive content"
-           }
-         ]
-        if data['schemes'] | includes('careleaverscovenant'),
-         [
-           {
-              html: trainingoutsideofemployment
-           },
-            {
-             text: "cost content"
-           },
-           {
-             text: "benefit content"
-           },
-           {
-             text: "time content"
-           },
-           {
-             text: "incentive content"
-           }
-         ]
-        if data['schemes'] | includes('trainingoutsideemployment') 
-       ]
-     }) }}
+{# Skills Bootcamp  #}
+     {% if data['schemes'] | includes('skillsbootcamp') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="bootcamp"> Skills Bootcamp </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     No cost unless self-employed
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+  Helps future-proof your business in a rapidly changing labour market and recruit staff with the right training and skills from the outset
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      12 to 16-weeks
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    No
+  </td>  
+</tr>
+{% endif %}
 
 
-      </form>
+{# SWAP  #}
+     {% if data['schemes'] | includes('swap') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="swap"> Sector-based Work Academy Placement (SWAP) </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     No cost, SWAP placements are entirely government-funded
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+  Helps you recruit or train staff through fully-funded pre-employment training
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      6-weeks
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    No
+  </td>  
+</tr>
+{% endif %}
+
+
+{# Supported Internship  #}
+     {% if data['schemes'] | includes('supportedinternship') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="supportedinternship"> Supported Internships for learners with additional needs </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     No costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+  Allows you to shape a job role that suits your business and the needs of the supported intern and increases your confidence of employing individuals with additional needs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      6 to 12-months
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    No
+  </td>  
+</tr>
+{% endif %}
+
+{# Care-leavers Covenant  #}
+     {% if data['schemes'] | includes('careleaverscovenant') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="clc"> Care-leavers covenant </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     No costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+  Helping care-leavers to move to independent living
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      Length of time can vary
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    No
+  </td>  
+</tr>
+{% endif %}
+
+
+{# HTQs  #}
+     {% if data['schemes'] | includes('htqs') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="htqs"> Higher Technical Qualifications (HTQs) </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     [cost content]
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+ [benefit content]
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+     [time content]
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    No
+  </td>  
+</tr>
+{% endif %}
+
+
+{# HTQs  #}
+     {% if data['schemes'] | includes('trainingoutsideemployment') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="training-outside-employment"> Training outside of employment  </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     Courses are fully funded for eligible adults but employees may need time to study and attend classes
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+ Help improve productivity, and develop a loyal and talented workforce in a rapidly changing labour market
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+   Length of time can vary
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incenetives</span>
+    No
+  </td>  
+</tr>
+{% endif %}
+
+  </tbody>
+  </table>
+</div>
+
+
 
     <p class="govuk-body">
     <a href="frontpage_thirds" class="govuk-link"> Return to list of all schemes </a>
