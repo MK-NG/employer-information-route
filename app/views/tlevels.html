@@ -11,60 +11,107 @@ Industry placements: T Levels
         text: 'Back',
         href: 'javascript:history.back()'
     }) }}
-
 {% endblock %}
 
 {% block content %}
-
+{% set page = 'tlevels' %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
         Industry placements: T Levels
       </h1>
-
       <p class="govuk-body">
-        Applies to England
-      </p>    
-
-      <p class="govuk-body">
-      <a href="https://www.apprenticeships.gov.uk/employers">T levels</a> are a new qualification for students aged 16 to 19 who’ve finished GCSEs. They are a 2-year qualification and the equivalent to 3 A levels.
+        <a href="https://www.tlevels.gov.uk/employers">T levels</a> are a qualification for students aged 16 to 19 who have finished GCSEs. They are a 2-year qualification and the equivalent to 3 A levels.
       </p>
-
       <p class="govuk-body">
-     They have been designed with employers to help young people develop the knowledge, attitude and practical skills to thrive in the workplace.
+         They have been designed with employers to help young people develop the knowledge, attitude and practical skills to thrive in the workplace.
       </p>
-
       <h2 class="govuk-heading-m"> Employer costs </h2>
-      <p class="govuk-body">
-      No cost but employers choose to pay the wages and any payments for expenses such as travel and living costs. 
-      </p>
-
+        <p class="govuk-body">
+        No cost but employers choose to pay the wages and any payments for expenses such as travel and living costs. 
+        </p>
+      <h2 class="govuk-heading-m">Employer responsibility </h2>
+       <p> 
+          Employers must provide:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              a safe work environment
+            </li>
+            <li>
+              opportunities for the student to develop their technical skills within your industry
+            </li>
+            <li>
+              a line manager to support, supervise and mentor the student
+            </li>
+            <li>
+              an induction which includes explaining relevant policies and procedures
+            </li>
+            <li>
+              formal feedback on the student’s progress against the agreed learning goals at the end of the placement
+            </li>
+          </ul>
+        </p>
+      <h2 class="govuk-heading-m"> Benefits of T Levels </h2>
+        <p class="govuk-body">
+          T-levels are available in more than 20 courses, covering 11 skill areas. 
+        </p>
+        <p class="govuk-body">
+          These include:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>          
+              agriculture, environmental and animal care
+            </li>
+            <li>
+            business and administration
+            </li>
+            <li>
+              catering and hospitality
+            </li>
+            <li>
+            creative and design
+            </li>
+            <li>
+            digital and IT
+            </li>
+            <li>
+              education and childcare
+            </li>
+            <li>
+            engineering and manufacturing
+            </li>
+            <li>
+              hair and beauty
+            </li>
+            <li>
+            health and science
+            </li>
+            <li>
+            legal, finance and accounting
+            </li>
+          </ul>
+        </p>
+        <p class="govuk-body">
+         Find out <a href="https://www.tlevels.gov.uk/employers" class="govuk-link">how T Levels can benefit your business</a>.
+        </p>
+        <p class="govuk-body">
+          Read about <a href="https://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-t-level-industry-placements" class="govuk-link">how businesses are using T Levels industry placements</a>.
+        </p>
+   <section  style="margin-left: -15px" class="grey-box"> 
         <h2 class="govuk-heading-m"> How to offer an industry placement</h2>
-  <p class="govuk-body">
-       Employers ready to <a href="https://www.tlevels.gov.uk/employers/next-steps">take the next steps with T Levels</a> can contact us for help with:
-       <ul class="govuk-list govuk-list--bullet">
+      <p class="govuk-body">
+        Employers ready to <a href="https://www.tlevels.gov.uk/employers/next-steps">take the next steps with T Levels</a> can contact us for help with:
+        <ul class="govuk-list govuk-list--bullet">
          <li>
            answering questions about industry placements
          </li>
          <li>
            planning and preparing to offer placements
          </li>         
-       </ul>
-        </p>
-
-      <h2 class="govuk-heading-m"> Benefits of T Levels </h2>
-  <p class="govuk-body">
-        Find out <a href="https://www.tlevels.gov.uk/employers"> how T Levels can benefit your business</a>.
-        </p>
-
-          <p class="govuk-body">
-        Read about <a href="https://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-t-level-industry-placements?utm_source=PFJMainPage&utm_medium=Link&utm_campaign=PFJ"> how businesses are using T Levels inustry placements</a>.
-        </p>
-
-
-  
-    
+        </ul>
+      </p>
+      </section>
     </div>
+        {% include "./includes/schemes.html" %}    
   </div>
 
 {% endblock %}

@@ -15,7 +15,7 @@ Higher Technical Qualifications (HTQs)
 {% endblock %}
 
 {% block content %}
-
+{% set page = 'htq' %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
@@ -49,6 +49,7 @@ Higher Technical Qualifications (HTQs)
        Helps learners to pursue a vocational skill outside of work.
       </p>
            </div>
+    {% include "./includes/schemes.html" %}    
   </div>
 
 {% endblock %}

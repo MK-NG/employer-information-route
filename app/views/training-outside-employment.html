@@ -15,6 +15,7 @@ Training Outside of Employment
 {% endblock %}
 
 {% block content %}
+{% set page = 'training-outside-employment' %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -142,6 +143,8 @@ The National Careers Service can help you:
 
 
     </div>
+    {% include "./includes/schemes.html" %}    
+
   </div>
 
 {% endblock %}

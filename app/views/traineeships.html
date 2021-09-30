@@ -16,63 +16,87 @@ Traineeships
 
 {% block content %}
 
+{% set page = 'traineeships' %}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
         Traineeships
       </h1>
-
       <p class="govuk-body">
-        A traineeship is a skills development programme that includes a work placement. 
+       A <A href="https://www.gov.uk/guidance/traineeship-information-for-employers" class="govuk-link">traineeship</a> is a skills development programme that includes a work placement. 
       </p>    
-
       <p class="govuk-body">
-    The full programme can last from 6 weeks up to 1 year, though most traineeships last for less than 6 months.
+        The full programme can last from 6 weeks up to 1 year, though most traineeships last for less than 6 months.
       </p>
-
       <p class="govuk-body">
-        Your business needs to be able to offer at least 70 hours of a safe, meaningful, and high-quality work experience. You will work with a training provider to design the programme.
+        Your business needs to be able to offer at least 70 hours of a safe, meaningful, and high-quality work experience. 
+        You will work with a training provider to design the programme.
       <p>
-
       <p class="govuk-body">
         The trainee will gain English, maths, digital and work-related qualifications which can lead them on to:
         <ul class="govuk-list govuk-list--bullet">
           <li>
-            An apprenticeship
+            an apprenticeship
           </li>
           <li>
-            Work
+            work
           </li>
           <li>
-            Further Education
+           further education
           </li>
           <li>
-           A Kickstart placement
+           a Kickstart placement
           </li>
         </ul>
-        </p>
-
+      </p>
+    <h2 class="govuk-heading-m"> Employer responsibility </h2>
+      <p class="govuk-body">
+      Employers must provide:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a safe, meaningful and high-quality work experience placement
+          </li>
+          <li>
+            a minimum of 70 hours of work experience placement over the duration of the traineeship (if the trainee claims benefits, the placement cannot last longer than 240 hours)
+          </li>
+          <li>
+            constructive feedback and advice to the trainee
+          </li>
+          <li>
+            an interview for an apprenticeship or job in their organisation at the end of the traineeship if one is available
+          </li>
+          <li>
+            an exit interview at the end of the traineeship with meaningful written feedback if no job is available
+          </li>       
+        </ul>
+      </p>
+    <h2 class="govuk-heading-m"> Benefits of Traineeships </h2>
+      <p class="govuk-body">
+       Traineeships have seen big increases as businesses recover from the pandemic and are expected to double to around 40,000 per year.
+      </p>
+      <p class="govuk-body">
+         Find out <a href="https://www.gov.uk/guidance/traineeship-information-for-employers">how traineeships can benefit your business</a>.
+      </p>
+      <p class="govuk-body">
+        Read about <a href="https://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-traineeships"> how businesses are using traineeships</a>.
+      </p>
       <h2 class="govuk-heading-m"> Employer costs </h2>
       <p class="govuk-body">
-        No cost but employers choose to pay the wages and any payments for expenses such as travel and living costs.  
+       No cost but employers choose to pay the wages and any payments for expenses such as travel and living costs. 
       </p>
 
-     
-        <h2 class="govuk-heading-m"> How to offer a traineeship</h2>
-  <p class="govuk-body">
- <a href="https://www.gov.uk/guidance/traineeship-information-for-employers#get-started">Contact the National Apprenticeship Service </a> to get started with offering a traineeship. 
-        </p>
-
-   
- <h2 class="govuk-heading-m"> Benefits of Traineeships </h2>
-  <p class="govuk-body">
-   Find out <a href="https://www.gov.uk/guidance/traineeship-information-for-employers">how traineeships can benefit your business</a>.
-Read about <a href="https://www.gov.uk/guidance/traineeship-information-for-employers"> how businesses are using traineeships</a>.
-  
-<p class="govuk-body">
-  <a href="https://www.gov.uk/guidance/traineeship-information-for-employers">Visit the dedicated traineeships page for more information </a>
-    </p>
+   <section style="margin-left: -15px"  class="grey-box"> 
+    <h2 class="govuk-heading-m"> Offer a traineeship</h2>
+      <p class="govuk-body">
+    Get started with offering a traineeship.  </p> 
+        <p class="govuk-body"> 
+        <a href="https://www.gov.uk/guidance/traineeship-information-for-employers#get-started"> Contact the National Apprenticeship Service </a> 
+      </p>
+    </section>
     </div>
+    {% include "./includes/schemes.html" %}    
   </div>
 
 {% endblock %}

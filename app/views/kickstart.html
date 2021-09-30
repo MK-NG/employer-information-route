@@ -16,6 +16,9 @@ Kickstart scheme
 
 {% block content %}
 
+{% set page = 'kickstart' %}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
@@ -80,6 +83,7 @@ Kickstart scheme
     </p>
      
     </div>
+     {% include "./includes/schemes.html" %}    
   </div>
 
 {% endblock %}
