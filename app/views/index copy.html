@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find skills and employment schemes
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "PROTOTYPE"
+  },
+  html: 'This is a prototype and is only intended for research and experimentation.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      <ul class="govuk-list">
+        <li>
+             <a href="details"> Frontpage - Details </a>
+        </li>
+        <li>
+          <a href="thirds"> Frontpage - Thirds </a>
+        </li>       
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
+

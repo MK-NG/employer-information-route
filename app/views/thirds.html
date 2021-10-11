@@ -1,0 +1,177 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find skills and employment schemes
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "PROTOTYPE"
+  },
+  html: 'This is a prototype and is only intended for research and experimentation.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      <h1 class="govuk-heading-xl">
+         Find skills and employment schemes
+      </h1>
+      <p>
+        A range of government programmes, are available for employers who are considering hiring employees, offering work experience or upskilling existing staff 
+        Some of which offer financial incentives.
+      </p>
+    </div>   
+  </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<ul class="govuk-list govuk-!-margin-top-5">
+
+<div class="govuk-grid-row">
+      {# apprenticeship #}
+            <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">     
+        <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/apprenticeship">Apprenticeships</a></h2>
+                <p class="govuk-body"> 
+                  Paid employment combining work and study in a specific job allowing you to develop your workforce and business 
+                </p>  
+        </li>    
+                </div>     
+
+      {# KICKSTART #}
+
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">     
+          <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/kickstart">Kickstart Scheme</a></h2>
+                <p class="govuk-body"> 
+                  Support 16 to 24-year-olds on Universal Credit with a work placement and see if they are a good fit for your business
+                </p>         
+              </li>
+                </div>  
+        
+      {# TRAINEESHIP #}
+
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">   
+      {#       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
+          <li>
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/traineeships">Traineeships</a></h2>
+                <p class="govuk-body"> 
+              A 6-week to 12 months unpaid work placement for 16- to 24-year-olds helping you develop a loyal and talented workforce
+                </p>         
+              </li>
+                </div>  
+         
+</div>
+
+    
+<div class="govuk-grid-row">
+
+        {# T Levels #}
+              <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">     
+        <li>
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/tlevels">Industry placements: T Levels </a></h2>
+                  <p class="govuk-body"> 
+                    Unpaid 9-week work and study placement giving you the chance to develop the next generation and help them succeed
+                  </p>
+        </li>
+                  </div>  
+
+        {# SKILLS BOOTCAMP #}
+
+
+            <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">     
+        {#       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
+            <li>
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/bootcamp">Skills Bootcamps</a></h2>
+                  <p class="govuk-body"> 
+                    Flexible courses to fast-track specialist skill development, for existing or new talent for your business
+                  </p>         
+                </li>
+                  </div>  
+                
+        {# SWAP #}
+
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">    
+            <li>
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/swap">Sector-based Work Academy Programme(SWAP)</a></h2>
+                  <p class="govuk-body"> 
+                    6-week placement designed to help you recruit a workforce with the right skills to sustain and grow your business
+                  </p>
+                </li>
+                  </div>  
+                        
+</div>
+
+<div class="govuk-grid-row">
+
+      {# SUPORTED INTERN #}
+
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">  
+      {#       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
+        <li>   
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/supportedinternship">Supported Internships for learners with additional needs</a></h2>
+            <p class="govuk-body"> 
+            An unpaid 6 to 12-month work placement for young people with additional needs supported by a qualified job coach
+            </p>    
+          </li>
+        </div>  
+
+        
+
+      {# CARE LEAVERS #}
+
+
+          <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">    
+      {#       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}    <li>
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/clc">Care-leavers covenant</a></h2>
+            <p class="govuk-body"> 
+            Help 16 to 25-year-olds leave care and become independent in whatever way suits your business
+            </p>     
+          </li>
+        </div>  
+
+
+
+
+        {# HTQS #}
+
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3">  
+      {#       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}  <li>   
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/htqs">Higher Technical Qualifications</a></h2>
+            <p class="govuk-body"> 
+              Level 4 or 5 qualifications, with no work placement but flexible for employees to study while working
+            </p>    
+          </li>
+        </div>  
+
+  </div>
+
+<div class="govuk-grid-row">
+
+        {# TRAINING OUTSIDE EMPLOYMENT #}
+
+        <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3"> 
+        {#       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #} <li>    
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><a href="/schemes/training-outside-employment">Training outside of employment</a></h2>
+              <p class="govuk-body"> 
+              Additional ways to train up existing employees through free qualifications, career advice and financial support
+              </p>     
+            </li>
+          </div>  
+</div>
+          
+
+</ul>
+
+
+   </div>
+  </div>
+
+{% endblock %}
+
