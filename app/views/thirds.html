@@ -170,6 +170,12 @@ Find skills and employment schemes
 </ul>
 
 
+{% if (data['showComparisonLink'] == 'true') and (data['version'] == '1') %}
+  {% include './includes/comparison.html' %}
+{% elif (data['showComparisonLink'] == 'true') and (data['version'] == '2') %}
+  {% include './includes/comparison-onepage.html' %}
+{% endif %}
+
    </div>
   </div>
 
