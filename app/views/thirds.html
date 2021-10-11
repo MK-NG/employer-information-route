@@ -169,12 +169,21 @@ Find skills and employment schemes
 
 </ul>
 
-
-{% if (data['showComparisonLink'] == 'true') and (data['version'] == '1') %}
-  {% include './includes/comparison.html' %}
-{% elif (data['showComparisonLink'] == 'true') and (data['version'] == '2') %}
-  {% include './includes/comparison-onepage.html' %}
-{% endif %}
+   <section class="grey-box"> 
+       <h3 class="govuk-heading-m"> Compare schemes </h3> 
+    <div class="govuk-grid-row">
+         <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">
+    You can use this tool to compare two or more schemes in more detail, seeing their benefits, financial incenetives and cost to you as an employer.
+    </p>
+    {{ govukButton({
+      text: "Compare schemes",
+      href: "which-schemes"
+    }) }}
+   
+         </div>
+         </div>
+   </section>
 
    </div>
   </div>
