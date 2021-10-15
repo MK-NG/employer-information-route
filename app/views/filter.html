@@ -1,0 +1,395 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Find skills and employment schemes
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+         Find skills and employment schemes
+      </h1>
+      <p>
+        A range of government programmes, are available for employers who are considering hiring employees, offering work experience or upskilling existing staff. 
+        Some of which offer financial incentives.
+      </p>
+    </div>
+  
+  </div>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+  
+{# APPRENTICESHIPS #}
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Filter the schemes to fit your business</h2>
+      <section class="grey-box"> 
+        <h3 class="govuk-heading-s"> 
+          What are your motivations? 
+        </h3>      
+         {{ govukCheckboxes({
+    idPrefix: "motivations",
+    name: "motivations",
+    classes: "govuk-checkboxes--small",
+    items: [
+      {
+        value: "train",
+        text: "To help train someone up into a full-time role",
+        checked: true if data['motivations'] | includes('train')
+      },   
+      {
+        value: "unpaid",
+        text: "To offer someone an unpaid work placement opportunity",
+        checked: true if data['motivations'] | includes('unpaid')
+      },
+      {
+        value: "diversify",
+        text: "To diversify our workforce or for corporate and social responsibility",
+        checked: true if data['motivations'] | includes('diversify')
+      }
+    ]
+  }) }} 
+  </section>
+
+      <section class="grey-box"> 
+   <h3 class="govuk-heading-s"> 
+          How long?
+        </h3>  
+
+         {{ govukCheckboxes({
+         idPrefix: "length",
+         name: "length",
+         classes: "govuk-checkboxes--small",           
+         items: [
+           {
+             value: "short",
+             text: "Up to 4 months",
+             checked: true if data['length'] | includes('short')
+           },
+            {
+             value: "medium",
+             text: "4 months to 12 months",
+             checked: true if data['length'] | includes('medium')
+           },
+            {
+             value: "long",
+             text: "A year or more",
+             checked: true if data['length'] | includes('long')
+           }
+         ]
+       }) }}
+       </section>
+
+      <section class="grey-box"> 
+          <h3 class="govuk-heading-s"> 
+          Can you pay them?
+        </h3>  
+
+            {{ govukCheckboxes({
+       idPrefix: "finance",
+       name: "finance",
+      classes: "govuk-checkboxes--small",  
+       hint: {
+         text: 'For example, are you able to pay at least the national minimum wage and some costs such as travel expenses? '
+       },
+       items: [
+          {
+           value: "paid",
+           text: "I can pay at least national minimum wage",
+           checked: true if data['finance'] | includes('paid')
+         },
+         {
+           value: "unpaid",
+           text: "I can offer unpaid placements ",
+           checked: true if data['finance'] | includes('unpaid')
+         }
+       ]
+     }) }}
+</section>
+
+      <section class="grey-box"> 
+   <h3 class="govuk-heading-s"> 
+          Qualifications needed
+        </h3>  
+ {{ govukRadios({
+    idPrefix: "qualifications",
+    name: "qualifications",
+    classes: "govuk-radios--small",    
+    items: [
+      {
+        value: "none",
+        text: "No qualification requirements",
+        checked: true if data['qualifications'] == 'none'
+      },   
+      {
+        value: "levelOneTwo",
+        text: "Level 1-2 (GCSEs)",
+        checked: true if data['qualifications'] == 'levelOneTwo'
+      },
+      {
+        value: "levelThree",
+        text: "Level 3 (A Level or Diploma) or higher",
+        checked: true if data['qualifications'] == 'levelThree'
+      }
+    ]
+  }) }}
+
+
+    
+      </section>
+    </div>
+
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Apprenticeships</h2>
+          <p class="govuk-body"> 
+            For those aged 16 or over, combines working with studying to gain skills and knowledge in a specific job.
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Apprentices are paid at least a minimum wage and spend 80% of the time on the job.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Apprenticeships last at least one year, and can start at any time.
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="apprenticeship">Read more about apprenticeships </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+
+
+{# T Levels #}
+
+ 
+        <h2 class="govuk-heading-l">Industry placements: T Levels</h2>
+          <p class="govuk-body"> 
+           For students aged 16 to 19 who’ve finished GCSEs. A 2-year qualification equivalent to 3 A levels. 
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Payment is is not required during the placement, though some employers chose to do so.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Students spend 9 weeks in a relevant work placement. 
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="tlevels">Read more about T Levels </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  
+
+
+{# KICKSTART #}
+
+        <h2 class="govuk-heading-l">Kickstart Scheme</h2>
+          <p class="govuk-body"> 
+            A scheme lasting up to 6 months, providing funding to create new jobs for 16 to 24-year-olds on Universal Credit
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Funding is provided to pay for 25 hours per week at the National Minimum Wage. Employer can choose to fund additional hours
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Lasting up to 6 months, providing funding to create new jobs for 16 to 24-year-olds on Universal Credit
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="kickstart">Read more about the Kickstart Scheme </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    
+
+        
+{# SWAP #}
+
+        <h2 class="govuk-heading-l">Sector-based work academy programme (SWAP)</h2>
+          <p class="govuk-body"> 
+            A 6-week training scheme to help prepare unemployed adults to apply for jobs. Including a 4-week work placement and guaranteed interview with the employer. 
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                The employer does not need to pay as the participant continues to be eligible for universal credit.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              The scheme is 6 weeks long.
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="swap">Read more about SWAP </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+
+{# TRAINEESHIP #}
+
+        <h2 class="govuk-heading-l">Traineeship</h2>
+          <p class="govuk-body"> 
+            A 6-week to 12 months unpaid work placement for 16- to 24-year-olds helping you develop a loyal and talented workforce. 
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                It is not necessary to pay trainees, but employers may choose to pay expenses for transport or meals.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              A programme can last from 6 weeks up to 1 year. 
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="traineeships">Read more about Traineeships </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">     
+  
+
+{# SKILLS BOOTCAMP #}
+
+    
+        <h2 class="govuk-heading-l">Skills Bootcamps</h2>
+          <p class="govuk-body"> 
+             Flexible courses to fast-track specialist skill development, for existing or new talent for your business.          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Free of charge to the employer if they are recruiting.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Up to 16 weeks
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="bootcamp">Read more about Skills Bootcamps </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  
+
+
+{# SUPORTED INTERN #}
+
+  
+        <h2 class="govuk-heading-l">Supported Internships</h2>
+          <p class="govuk-body"> 
+              Providing young people with additional needs the skills they need for work through learning in the workplace. A qualified job coach supports interns in the workplace.
+          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Internships are unpaid. 
+
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              This scheme lasts between 6 and 12 months. 
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="supportedinternship">Read more about Supported Internships </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+
+{# CARE LEAVERS #}
+
+    
+        <h2 class="govuk-heading-l">Care-leavers Covenant</h2>
+          <p class="govuk-body"> 
+            Help 16 to 25-year-olds leave care and become independent in whatever way suits your business.          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                Internships are unpaid. 
+
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              This scheme lasts between 6 and 12 months. 
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="clc">Read more about Care-leavers Covenant </a>
+        </p>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+
+{# TRAINING OUTSIDE EMPLOYMENT #}
+
+    
+        <h2 class="govuk-heading-l">Training Outside of Employment</h2>
+          <p class="govuk-body"> 
+            Additional ways to train up existing employees through free qualifications, career advice and financial support.          </p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Cost</h3>
+              <p class="govuk-body"> 
+                 No cost to employer, as they are not involved.
+              </p>
+          </div>
+          <div class="govuk-grid-column-one-half">
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-3">Length</h3>
+            <p class="govuk-body"> 
+              Various lengths depending on the training
+            </p>
+          </div>              
+        </div>
+        <p class="govuk-body">
+          <a class="govuk-link" href="training-outside-employment">Read more about Training Outside of Employment </a>
+        </p>
+
+   
+   
+    
+    </div>
+  </div>
+
+{% endblock %}
+
