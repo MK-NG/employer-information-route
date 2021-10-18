@@ -1,0 +1,80 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Supported Internships
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+{% block content %}
+{% set page = 'supportedinternship' %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+         Supported Internships for learners with additional needs 
+      </h1>
+
+      <p class="govuk-body">
+       Supported internships are a work-based study programme for young people aged 16 to 24 with Special Educational Needs and Disabilities (SEND), who have an <a href="https://www.gov.uk/children-with-special-educational-needs/extra-SEN-help">Education Health and Care (EHC) plan</a>.
+      </p>    
+
+      <p class="govuk-body">
+     Supported Internships equip young people with the skills they need to secure and sustain employment through learning in the workplace, with support from a qualified job coach. They last between 6 to 12 months
+      </p>
+
+      <p class="govuk-body">
+        Supported interns are enrolled with and supported by a learning provider, but spend most of their learning time – typically around 70% in the workplace. 
+      </p>
+      <p class="govuk-body">
+        Alongside their time with the employer, supported interns complete a personalised study programme delivered by the school/college, which includes the chance to study for relevant qualifications, if appropriate, and English and maths at an appropriate level.
+      </p>
+     
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+        There is no cost to the employer. It is optional whether you choose to pay the young person a wage and/or payment for expenses such as travel and subsistence.
+      </p>
+
+ <h2 class="govuk-heading-m"> Benefits of Supported Internships </h2>
+  <p class="govuk-body">
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          Create and support a diverse workforce
+        </li>
+        <li>
+          A job coach who will support the intern and increase your confidence of employing individuals with additional needs
+        </li>
+        <li>
+         Increase your capacity and productivity
+        </li>
+         <li>
+         Allows you to shape a job role that suits both the needs of your business and the needs of the supported intern
+        </li>
+      </ul>
+        </p>
+     
+        <h2 class="govuk-heading-m"> How to offer Supported Internships</h2>
+  <p class="govuk-body">
+ To apply, go to <a href="https://www.gov.uk/access-to-work/">Access to Work </a>and find the Access to Work centre that deals with your area.
+        </p>
+
+     
+  
+<p class="govuk-body">
+  <a href="https://www.gov.uk/government/publications/2010-to-2015-government-policy-special-educational-needs-and-disability-send/2010-to-2015-government-policy-special-educational-needs-and-disability-send#appendix-1-supported-internships-for-young-people-with-special-educational-needs-sen">Visit the dedicated supported internship page for more information</a>
+    </p>
+    </div>
+    {% include "../includes/schemes.html" %}    
+
+  </div>
+
+{% endblock %}
+
