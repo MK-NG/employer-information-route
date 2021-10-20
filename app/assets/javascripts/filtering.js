@@ -80,6 +80,7 @@ function filter() {
       for(j = 0; j < motivations.length; j++) {
         if(item.classList.contains(motivations[j]))  {
           motivationShow = true;
+          break;
         }
         else {
           motivationShow = false;  
@@ -92,11 +93,12 @@ function filter() {
         } else  {  
           timeShow = false;
           for(j = 0; j < time.length; j++) {
-            if(!item.classList.contains(time[j]))  {
-              timeShow = false;            
+            if(item.classList.contains(time[j]))  {
+              timeShow = true;
+              break;
             }
             else {
-              timeShow = true;
+              timeShow = false;            
             }
           }
         }
@@ -106,11 +108,12 @@ function filter() {
         } else  {  
           payShow = false;
           for(j = 0; j < pay.length; j++) {
-            if(!item.classList.contains(pay[j]))  {
-              payShow = false;            
+            if(item.classList.contains(pay[j]))  {
+              payShow = true;
+              break;
             }
             else {
-              payShow = true;
+              payShow = false;            
             }
           }
         }
@@ -120,11 +123,12 @@ function filter() {
         } else  {  
           qualificationShow = false;
           for(j = 0; j < qualification.length; j++) {
-            if(!item.classList.contains(qualification[j]))  {
-              qualificationShow = false;            
+            if(item.classList.contains(qualification[j]))  {
+              qualificationShow = true;
+              break;
             }
             else {
-              qualificationShow = true;
+              qualificationShow = false;            
             }
           }
         }
@@ -138,9 +142,9 @@ function filter() {
 
           
           var totalSchemes = document.querySelectorAll(".show").length;
+          totalSchemes = totalSchemes - 1
           document.getElementById("numberOfSchemes").innerHTML = totalSchemes;
-          console.log(totalSchemes)
-          if(totalSchemes != 1){
+          if(totalSchemes != 0){
             $('.noResults').hide()
           } else {
             $('.noResults').show()
