@@ -142,7 +142,7 @@ function filter() {
 
           
           var totalSchemes = document.querySelectorAll(".show").length;
-          totalSchemes = totalSchemes - 1
+          console.log(totalSchemes)
           document.getElementById("numberOfSchemes").innerHTML = totalSchemes;
           if(totalSchemes != 0){
             $('.noResults').hide()
