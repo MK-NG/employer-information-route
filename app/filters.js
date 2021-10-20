@@ -7,34 +7,28 @@ module.exports = function (env) {
    */
   var filters = {}
 
-
-	filters.includes = (arrayOfStrings, testString) => {
-		if (Array.isArray(arrayOfStrings)) {
-			if (arrayOfStrings.indexOf(testString) != -1) {
-				return true
-			}
-		}
-		return false
-	}
+  filters.includes = (arrayOfStrings, testString) => {
+    if (Array.isArray(arrayOfStrings)) {
+      if (arrayOfStrings.indexOf(testString) !== -1) {
+        return true
+      }
+    }
+    return false
+  }
 
   filters.remove = (array, str) => {
-
-    for( var i = 0; i < array.length; i++){ 
-    
-      if ( array[i] === str) { 
-  
-          array.splice(i, 1); 
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] === str) {
+        array.splice(i, 1)
       }
-  
+    }
+    return array
   }
-		return array
-	}
-
 
   filters.append = (array, str) => {
-		array.push(str)
-		return array
-	}
+    array.push(str)
+    return array
+  }
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
