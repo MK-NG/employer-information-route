@@ -4,20 +4,20 @@ for (var i = 0; i < motivationCheckboxes.length; i++) {
 }
 
 var timeCheckboxes = document.querySelectorAll('.times input')
-for (var i = 0; i < timeCheckboxes.length; i++) {
-  timeCheckboxes[i].addEventListener('change', filter)
+for (var ii = 0; ii < timeCheckboxes.length; ii++) {
+  timeCheckboxes[ii].addEventListener('change', filter)
 }
 
 var payCheckboxes = document.querySelectorAll('.payment input')
-for (var i = 0; i < payCheckboxes.length; i++) {
-  payCheckboxes[i].addEventListener('change', filter)
+for (var iii = 0; iii < payCheckboxes.length; iii++) {
+  payCheckboxes[iii].addEventListener('change', filter)
 }
 
 var qualificationCheckboxes = document.querySelectorAll(
   '.qualifications input'
 )
-for (var i = 0; i < qualificationCheckboxes.length; i++) {
-  qualificationCheckboxes[i].addEventListener('change', filter)
+for (var iiii = 0; iiii < qualificationCheckboxes.length; iiii++) {
+  qualificationCheckboxes[iiii].addEventListener('change', filter)
 }
 
 filter()
@@ -36,21 +36,21 @@ function filter () {
 
   var timeCheckboxes = document.querySelectorAll('.times input')
   var time = []
-  var c
+  var cc
   for (i = 0; i < timeCheckboxes.length; i++) {
     if (timeCheckboxes[i].checked) {
-      c = timeCheckboxes[i].value
-      time.push(c)
+      cc = timeCheckboxes[i].value
+      time.push(cc)
     }
   }
 
   var payCheckboxes = document.querySelectorAll('.payment input')
   var pay = []
-  var c
+  var ccc
   for (i = 0; i < payCheckboxes.length; i++) {
     if (payCheckboxes[i].checked) {
-      c = payCheckboxes[i].value
-      pay.push(c)
+      ccc = payCheckboxes[i].value
+      pay.push(ccc)
     }
   }
 
@@ -58,11 +58,11 @@ function filter () {
     '.qualifications input'
   )
   var qualification = []
-  var c
+  var cccc
   for (i = 0; i < qualificationCheckboxes.length; i++) {
     if (qualificationCheckboxes[i].checked) {
-      c = qualificationCheckboxes[i].value
-      qualification.push(c)
+      cccc = qualificationCheckboxes[i].value
+      qualification.push(cccc)
     }
   }
 
@@ -138,9 +138,10 @@ function filter () {
   var totalSchemes = document.querySelectorAll('.show').length
   console.log(totalSchemes)
   document.getElementById('numberOfSchemes').innerHTML = totalSchemes
+  var x = document.getElementById('noResults')
   if (totalSchemes !== 0) {
-    $('.noResults').hide()
+    x.style.display = 'none'
   } else {
-    $('.noResults').show()
+    x.style.display = 'block'
   }
 }
