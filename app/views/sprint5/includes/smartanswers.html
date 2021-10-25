@@ -1,0 +1,160 @@
+{# Set Length answers #}
+    {% if data['length'] %}
+    {% set lengthHTML %}
+        <ul class="govuk-list govuk-body">
+        {% for lengthAnswer in data['length'] %}
+            <li>
+            {% if lengthAnswer  == 'short' %}
+            Up to 4 months
+            {% elif lengthAnswer == 'medium' %}
+            4 months to 12 months
+            {% elif lengthAnswer == 'long' %}
+            More than a year
+            {% elif lengthAnswer == 'notSure' %}
+            Not sure
+            {% else %}
+            None
+            {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endset %}
+    {% endif %}
+
+{# Set motivations answers #}
+ 
+{% if data['motivations'] %}
+  {% set motivationsHTML %}
+      <ul class="govuk-list govuk-body">
+      {% for motivation in data['motivations'] %}
+        <li>
+        {% if motivation  == 'train' %}
+          To train someone up into a full time role
+        {% elif motivation == 'unpaid' %}
+        To offer someone an unpaid work placement opportunity
+        {% elif motivation == 'diversify' %}
+          To diversify our workforce or for Corporate and Social Responsibility
+        {% elif motivation == 'notSure' %}
+          Not sure
+        {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+  {% endset %}
+{% endif %}
+
+{# Set additional finance answers #}
+{% if data['finance'] %}
+  {% set financeHTML %}
+      <ul class="govuk-list govuk-body">
+      {% for finance in data['finance'] %}
+        <li>
+        {% if finance  == 'unpaid' %}
+          An unpaid placement
+        {% elif finance == 'paid' %}
+        Pay at least minimum wage      
+        {% elif finance == 'notSure' %}
+          Not sure
+        {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+  {% endset %}
+{% endif %}
+
+{# Set qualifications answers #}
+{% if data['qualifications'] %}
+  {% set qualificationHTML %}
+  <p class="govuk-body">
+        {% if data['qualifications']  == 'none' %}
+          No qualification requirements
+        {% elif data['qualifications']  == 'levelOneTwo' %}
+        Level 1-2 (GCSEs)
+        {% elif data['qualifications']  == 'levelThree' %}
+          Level 3 (A Level or Diploma) or higher
+        {% endif %}
+  </p>
+  {% endset %}
+{% endif %}
+
+
+{% if motivationsHTML | length != 0 %}
+      <h2 class="govuk-heading-m">Your answers </h2> 
+{% endif %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Your motivation"
+              },
+              value: {
+                html: motivationsHTML
+              },
+              actions: {
+                items: [
+                  {
+                    href: "motivations",
+                    text: "Change",
+                    visuallyHiddenText: "your motivations"
+                  }
+                ]
+              }
+            }
+            if motivationsHTML | length != 0,
+            {
+              key: {
+                text: "Length of placement"
+              },
+              value: {
+                html: lengthHTML
+              },
+              actions: {
+                items: [
+                  {
+                    href: "length",
+                    text: "Change",
+                    visuallyHiddenText: "length of placement you can offer"
+                  }
+                ]
+              }
+            }
+            if lengthHTML | length != 0,
+            {
+              key: {
+                text: "Additional financial investment"
+              },
+              value: {
+                html: financeHTML
+              },
+              actions: {
+                items: [
+                  {
+                    href: "finance",
+                    text: "Change",
+                    visuallyHiddenText: "what additional financial investment you can offer"
+                  }
+                ]
+              }
+            }
+            if financeHTML | length != 0,
+            {
+              key: {
+                text: "Qualifications"
+              },
+              value: {
+                html: qualificationsHTML
+              },
+              actions: {
+                items: [
+                  {
+                    href: "qualifications",
+                    text: "Change",
+                    visuallyHiddenText: "qualifications needed"
+                  }
+                ]
+              }
+            }
+            if qualificationsHTML | length != 0
+          ]
+        }) }}  

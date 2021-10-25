@@ -1,0 +1,94 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Sector-based work academy programme (SWAP)
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set page = 'swap' %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Sector-based work academy programme (SWAP)
+      </h1>
+        <p class="govuk-body">
+          <a href="https://www.gov.uk/government/publications/sector-based-work-academies-employer-guide/sector-based-work-academies-employer-guide" class="govuik-link">Sector-based work academies (SWAP)</a> help prepare those receiving unemployment benefits to apply for jobs in a different area of work.
+        </p>    
+        <p class="govuk-body">
+          Placements run up to 6 weeks and are designed to help you recruit a workforce with the right skills to sustain and grow your business.
+        </p>
+        <p class="govuk-body">
+          They are tailored to meet your recruitment needs, including pre-employment training, a work experience placement, and your guarantee of a job interview for participants. 
+        </p>      
+        <p class="govuk-body">
+        Jobcentre Plus manages SWAP in England and Scotland.
+        </p>
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+        <p class="govuk-body">
+        There is no direct cost, SWAP placements are entirely government-funded.
+        </p>
+      <h2 class="govuk-heading-m"> Employer responsibility </h2>
+        <p class="govuk-body">
+         In order for both businesses and individuals to benefit from a work placement, Jobcentre Plus will ask that you:
+         <ul class="govuk-list govuk-list--bullet">
+           <li>
+             explain what you need the scheme’s participants to do
+           </li>
+           <li>
+            inform them of management and reporting arrangements
+           </li>
+           <li>
+             encourage positive working relationships
+           </li>
+           <li>
+             provide an overview of your business and its values and culture
+           </li>
+           <li>
+             give a tour of the workplace
+           </li>
+           <li>
+             provide guidance on using any equipment
+           </li>
+           <li>
+             provide guidance on health and safety
+           </li>
+           <li>
+             explain standard workplace practices such as security procedures, dress code, sick leave and absences and break times
+           </li>           
+         </ul>
+        </p>
+           <h2 class="govuk-heading-m"> Benefits of SWAP</h2>
+        
+        <p class="govuk-body">
+          Find out <a class="govuk-link" href="https://www.gov.uk/government/publications/sector-based-work-academies-employer-guide/sector-based-work-academies-employer-guide">how SWAP could benefit your business</a>.
+        </p>
+        <h2 class="govuk-heading-m"> Case studies </h2>
+        <p class="govuk-body">
+        Read about <a class="govuk-link" href="https://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-sector-based-work-academies"> how employers are using sector-based work academy programmes</a>. 
+      </p>   
+
+   <section style="margin-left: -15px" class="grey-box govuk-!-margin-top-7"> 
+       <h2 class="govuk-heading-m">Offer a SWAP </h2>
+        <p class="govuk-body">       
+          Contact the Employer Services Line on 0800 169 0178 </p>
+        <p class="govuk-body">       
+           They will put you in touch with a local Jobcentre Plus employer team.
+        </p>  
+
+    </div>
+    {% include "../includes/schemes.html" %}    
+</div>
+
+{% endblock %}
+
