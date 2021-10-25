@@ -1,0 +1,64 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Care Leavers Covenant
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set page = 'clc' %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Care Leavers Covenant
+      </h1>
+
+      <p class="govuk-body">
+       The Care-leavers Covenant is a way companies can support 16 to 25-year-olds leaving care to become independent.
+      </p>    
+
+      <p class="govuk-body">
+     Organisations can pledge support including apprenticeships, work-experience or free or discounted goods or services. About the CLC - Care Leaver Covenant (mycovenant.org.uk)
+      </p>
+
+      
+         <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+      There is no direct cost, SWAP placements are entirely government-funded.
+      </p>
+
+     <h2 class="govuk-heading-m"> Benefits of a Care Leavers Covenant</h2>
+        <p class="govuk-body">
+        Create a support a diverse and loyal workforce.
+        </p>
+        <h2 class="govuk-heading-m">Case studies </h2>
+
+        <p class="govuk-body">
+        Read how <a href="https://mycovenant.org.uk/covenant-stories/">companies have been making a difference to the lives of care leavers</a>
+        </p>   
+        
+
+<section class="grey-box govuk-!-margin-top-7">
+        <h2 class="govuk-heading-m"> Offer a Care Leavers Covenant</h2>
+          <p class="govuk-body">
+          <a href="https://mycovenant.org.uk/support-the-covenant/organisation-sign-up/">Find out how to join the Care Leavers Covenant</a> and tailor what opportunities your business would like to offer to care leavers.
+          </p>   
+          <p class="govuk-body">
+          Alternatively, contact the Care Leavers Covenant via telephone on 0800 077 3557.
+          </p>
+</section>
+    </div>
+    {% include "../includes/schemes.html" %}        
+  </div>
+
+{% endblock %}
+

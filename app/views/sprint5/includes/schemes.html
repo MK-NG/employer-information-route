@@ -1,0 +1,59 @@
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+       <h3 class="govuk-heading-m"> Other schemes </h3>
+        <p class="govuk-body"> 
+        <ul class="govuk-list">
+        {% if page != 'apprenticeship' %}
+          <li>
+            <a href="apprenticeship"> Apprenticeships </a>
+          </li>
+        {% endif %}
+        {% if page != 'kickstart' %}
+          <li>
+            <a href="kickstart"> Kickstart scheme </a>
+          </li>
+        {% endif %}
+        {% if page != 'traineeships' %}
+          <li>
+            <a href="traineeships"> Traineeships </a>
+          </li>
+        {% endif %}
+        {% if page != 'tlevels' %}
+          <li>
+            <a href="tlevels"> Industry placements: T Levels </a>
+          </li>
+        {% endif %}
+        {% if page != 'skillsbootcamp' %}
+          <li>
+            <a href="bootcamp"> Skills Bootcamps </a>
+          </li>
+        {% endif %}
+         {% if page != 'swap' %}
+          <li>
+            <a href="swap"> Sector-based Work Academy Programme(SWAP) </a>
+          </li>
+        {% endif %}
+         {% if page != 'supportedinternship' %}
+          <li>
+            <a href="supportedinternship"> Supported Internship for learners with additional needs </a>
+          </li>
+        {% endif %}
+        {% if page != 'clc' %}
+          <li>
+            <a href="clc"> Care-leavers Covenant </a>
+          </li>
+        {% endif %}
+        {% if page != 'htq' %}
+          <li>
+            <a href="htqs"> Higher Technical Qualifications </a>
+          </li>
+        {% endif %}
+        {% if page != 'training-outside-employment' %}
+          <li>
+            <a href="training-outside-employment"> Training outside of employment </a>
+          </li>
+        {% endif %}
+        </ul>
+        </p>
+      </div>
+    </div>

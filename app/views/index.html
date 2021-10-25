@@ -1,95 +1,117 @@
+{% extends "layout.html" %} {% block pageTitle %} Employers Options Prototypes
+{% endblock %} {% block content %}
 
-{% extends "layout.html" %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Employers Options Prototypes</h1>
 
-{% block pageTitle %}
- Employers Options Prototypes 
-{% endblock %}
+    <h2 class="govuk-heading-m">Sprint 6</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="thirds" class="govuk-link"> Front page - thirds </a>
+      </li>
+      <li>
+        <a href="details" class="govuk-link"> Front page - details </a>
+      </li>
+      <li>
+        <a href="filter" class="govuk-link"> Front page - filter </a>
+      </li>
+    </ul>
 
-{% block content %}
+    <h2 class="govuk-heading-m">Sprint 5</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="sprint5/thirds" class="govuk-link"> Front page - thirds </a>
+      </li>
+      <li>
+        <a href="sprint5/details" class="govuk-link"> Front page - details </a>
+      </li>
+      <li>
+        <a href="sprint5/filter" class="govuk-link"> Front page - filter </a>
+      </li>
+    </ul>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-         Employers Options Prototypes 
-      </h1>
+    <h2 class="govuk-heading-m">Sprint 4</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="sprint4/thirds" class="govuk-link"> Front page - thirds </a>
+      </li>
+      <li>
+        <a href="sprint4/details" class="govuk-link"> Front page - details </a>
+      </li>
+    </ul>
 
-      <h2 class="govuk-heading-m"> Sprint 5 </h2>
-<ul class="govuk-list"> 
-  <li>
-    <a href="thirds" class="govuk-link"> Front page - thirds </a>
-  </li>
-  <li>
-    <a href="details" class="govuk-link"> Front page - details </a>
-</li>
- <li>
-    <a href="filter" class="govuk-link"> Front page - filter </a>
-</li>
-</ul>
+    <h2 class="govuk-heading-m">Sprint 3</h2>
 
-<h2 class="govuk-heading-m"> Sprint 4 </h2>
-<ul class="govuk-list"> 
-  <li>
-    <a href="sprint4/thirds" class="govuk-link"> Front page - thirds </a>
-  </li>
-  <li>
-    <a href="sprint4/details" class="govuk-link"> Front page - details </a>
-</li>
-</ul>
+    <h3 class="govuk-heading-s">Front page variations</h3>
 
+    <ul class="govuk-list">
+      <li>
+        <a href="sprint3/frontpage" class="govuk-link">
+          Front page - details
+        </a>
+      </li>
+      <li>
+        <a
+          href="sprint3/frontpage_thirds?showComparisonLink=false"
+          class="govuk-link"
+        >
+          Front page - thirds
+        </a>
+      </li>
+      <li>
+        <a href="sprint3/frontpage_filter" class="govuk-link">
+          Front page - filter
+        </a>
+      </li>
+    </ul>
 
-<h2 class="govuk-heading-m"> Sprint 3 </h2>
+    <h3 class="govuk-heading-s">Comparison variations</h3>
 
-<h3 class="govuk-heading-s"> Front page variations </h3>
+    <ul class="govuk-list">
+      <li>
+        <a href="sprint3/which-schemes" class="govuk-link"
+          >Comparison journey</a
+        >
+      </li>
+      <li>
+        <a
+          href="sprint3/frontpage_thirds?showComparisonLink=true&version=1"
+          class="govuk-link"
+        >
+          Front page - thirds with comparison link version 1</a
+        >
+      </li>
+      <li>
+        <a
+          href="sprint3/frontpage_thirds?showComparisonLink=true&version=2"
+          class="govuk-link"
+        >
+          Front page - thirds with comparison link version 2</a
+        >
+      </li>
+    </ul>
 
-<ul class="govuk-list"> 
-  <li>
-    <a href="sprint3/frontpage" class="govuk-link"> Front page - details </a>
-  </li>
-  <li>
-    <a href="sprint3/frontpage_thirds?showComparisonLink=false" class="govuk-link"> Front page - thirds </a>
-  </li>  
-  <li>
-    <a href="sprint3/frontpage_filter" class="govuk-link"> Front page  - filter </a>
-  </li> 
-  
-</ul>
+    <h3 class="govuk-heading-s">Questionnaire</h3>
+    <ul class="govuk-list">
+      <li>
+        <a href="sprint3/find" class="govuk-link">Questionnaire</a>
+      </li>
+    </ul>
 
-<h3 class="govuk-heading-s"> Comparison variations </h3>
+    <h2 class="govuk-heading-m">Sprint 2</h2>
 
-<ul class="govuk-list">
- <li>
-   <a href="sprint3/which-schemes" class="govuk-link">Comparison journey</a>
-  </li>
-  <li>
-    <a href="sprint3/frontpage_thirds?showComparisonLink=true&version=1" class="govuk-link"> Front page - thirds with comparison link version 1</a>
-  </li>
-    <li>
-    <a href="sprint3/frontpage_thirds?showComparisonLink=true&version=2" class="govuk-link"> Front page - thirds with comparison link version 2</a>
-  </li>
-  </ul>
-
-
-<h3 class="govuk-heading-s"> Questionnaire </h3>
-<ul class="govuk-list">
-   <li>
-   <a href="sprint3/find" class="govuk-link">Questionnaire</a>
-  </li>
-</ul>
-
-<h2 class="govuk-heading-m"> Sprint 2 </h2>
-
-<ul class="govuk-list">
-    <li>
-    <a href="sprint2/frontpage_ur" class="govuk-link"> Front page  </a>
-    </li>
-    <li>
-    <a href="sprint2/frontpage-2" class="govuk-link"> Front page - variations  </a>
-  </li> 
-</ul>
-
-    
-    </div>
+    <ul class="govuk-list">
+      <li>
+        <a href="sprint2/frontpage_ur" class="govuk-link"> Front page </a>
+      </li>
+      <li>
+        <a href="sprint2/frontpage-2" class="govuk-link">
+          Front page - variations
+        </a>
+      </li>
+    </ul>
   </div>
+</div>
 
 {% endblock %}
-
