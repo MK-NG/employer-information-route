@@ -1,0 +1,152 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Training Outside of Employment
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set page = 'training-outside-employment' %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+Training Outside of Employment
+      </h1>
+
+      <p class="govuk-body">
+      Career advice, free level 3 qualifications, and financial support support for level 4 and 5 qualifications are all available through Government initiatives, without having to involve an employer. 
+      </p>    
+
+        <h2 class="govuk-heading-l">Free qualifications for adults</h2>
+
+        <p class="govuk-body">
+          <a href="https://www.gov.uk/guidance/free-courses-for-jobs">Free level 3 qualifications</a> are government-funded courses for any adult aged 19 and over, who are looking to achieve their first full level 3 qualification.
+        </p>
+
+        <p class="govuk-body">
+          A full level 3 qualification is equivalent to an advanced technical certificate, diploma, or A levels.
+        </p>
+
+        <p class="govuk-body">
+        Without needing to fund the training yourself, they help you:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            develop the talent pool in your business
+          </li>
+          <li>
+          progress your current employees into higher skilled roles
+          </li>
+        </ul>
+        </p>
+
+<p class="govuk-body">
+  The <a href="https://www.gov.uk/guidance/national-skills-fund">National Skills Fund </a> provides more information, including who can add qualifications to the list of level 3 courses being funded as part of the Lifetime Skills Guarantee.
+</p>
+  
+
+      <h3 class="govuk-heading-m"> Employer costs </h3>
+      <p class="govuk-body">
+        You must pay apprentices <a href="https://www.gov.uk/national-minimum-wage-rates"> the minimum wage</a>.
+        </p>
+      <p class="govuk-body">
+          You may have to contribute 5% of the apprentice’s training and assessment costs – depending on the size of your business and the age of your apprentice. 
+      </p>
+
+   <h3 class="govuk-heading-m"> How to offer free level 3 qualifications </h3>
+  <p class="govuk-body">
+        Upskill your workforce by helping your employees <a href="https://www.gov.uk/government/publications/find-a-free-level-3-qualification">find a free level 3 qualification</a>.
+        </p>  
+     
+ <h3 class="govuk-heading-m"> Benefits of free level 3 qualifications </h3>
+  <p class="govuk-body">
+        Read the <a href="https://learning.linkedin.com/content/dam/me/business/en-us/amp/learning-solutions/images/workplace-learning-report-2019/pdf/workplace-learning-report-2019.pdf">LinkedIn Workplace Learning</a> report 2019 for information on developing a loyal and talented workforce. 
+        </p>
+
+        <h2 class="govuk-heading-l">Higher Technical Qualifications</h2>
+  
+<p class="govuk-body">
+ Higher Technical Qualifications are level 4 or 5 qualifications (foundation degree or higher national diploma). They align to existing occupational standards, providing learners with entry-level competence and allowing them to enter their chosen profession at a higher level. 
+    </p>
+
+    <p class="govuk-body">
+      There is no work placement element, but these qualifications are flexible to be able to study while working.
+    </p>
+
+
+  <h3 class="govuk-heading-m"> Employer costs </h3>
+      <p class="govuk-body">
+      None, as the course is not affiliated with the employer.
+        </p>
+     
+
+   <h3 class="govuk-heading-m"> Benefits of HTQs  </h3>
+  <p class="govuk-body">
+      Enables the user to pursue a vocaitional skill outside of work.
+        </p>  
+     
+        <h2 class="govuk-heading-l">National Careers Service</h2>
+
+<p class="govuk-body">
+The National Careers Service can help you: 
+  <ul class="govuk-list govuk-list--bullet">
+    <li>
+      explore work and skills opportunities for your workforce including those offered as part of the skills recovery package.
+    </li>
+    <li>
+      carry out skills needs analysis for your business to understand gaps and find solutions.
+    </li>
+    <li>
+      find skilled people to fill current vacancies in your organisation.
+    </li>
+  </ul>
+</p>
+
+<h3 class="govuk-heading-m"> Employer costs </h3>
+      <p class="govuk-body">
+     The National Careers Service is free to use.
+        </p>
+     
+
+   <h3 class="govuk-heading-m"> Benefits of NCS  </h3>
+  <p class="govuk-body">
+     NCS can help you:
+     <ul class="govuk-list govuk-list--bullet">
+       <li>
+         futureproof your business for the future labour market
+       </li>
+       <li>
+         help to develop your current workforce and supplement with talented individuals who have the skills you need
+       </li>
+       <li>
+        increase your resilience and productivity
+       </li>
+       <li>
+       take part in national virtual jobs fairs
+       </li>
+     </ul>
+        </p>  
+
+   <h3 class="govuk-heading-m"> How to use the National Career Service  </h3>
+<p class="govuk-body">
+  Find out more about the <a href="https://nationalcareers.service.gov.uk/">National Careers Service and how to contact them</a>.
+</p>
+
+
+    </div>  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
+  </div>
+
+{% endblock %}
+

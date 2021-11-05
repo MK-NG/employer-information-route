@@ -1,0 +1,71 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Kickstart scheme
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+{% set page = 'kickstart' %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+       Kickstart scheme
+      </h1>
+
+      <p class="govuk-body">
+        <a href="https://www.gov.uk/government/collections/kickstart-scheme">Kickstart scheme </a>provides funding to create new jobs for 16 to 24-year-olds on Universal Credit who are at risk of long term unemployment.
+      </p>    
+
+      <p class="govuk-body">
+      Placements are 6 months with 100% of the participants time spent in-work training, to help develop transferable skills aimed at increasing their chances of sustained employment.
+      </p>
+
+      <p class="govuk-body">
+      Employers can spread the job start dates up until 31 December 2021. You’ll get funding until 30 June 2022 if a young person starts their job on 31 December 2021
+      </p>
+
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+      No costs.  
+      </p>
+           
+        <h2 class="govuk-heading-m"> Benefits of the Kickstart Scheme </h2>
+      <p class="govuk-body">
+        Find out <a href="https://www.gov.uk/government/collections/kickstart-scheme">how the Kickstart Scheme can benefit your business</a>.
+      </p>
+      <h2 class="govuk-heading-m"> Case studies </h2>
+       <p class="govuk-body">
+       Read about <a href="http://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-the-kickstart-scheme">how employers are using the Kickstart Scheme</a>.
+      </p>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/huuul2a0zNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <section class="grey-box govuk-!-margin-top-7">
+        <h2 class="govuk-heading-m"> Offer Kickstart in your business  </h2>
+          <p class="govuk-body">
+          Get started with offering Kickstart in your business
+          </p>
+        <p><a href="https://secure.dwp.gov.uk/find-a-kickstart-gateway">Apply for Kickstart Scheme grant</a>.
+        </p>
+      </section>
+    </div>  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
+  </div>
+
+{% endblock %}
+

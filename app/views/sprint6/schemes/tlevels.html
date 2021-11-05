@@ -1,0 +1,138 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Industry placements: T Levels
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+{% endblock %}
+
+{% block content %}
+{% set page = 'tlevels' %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        T Levels: Industry placements
+      </h1>
+      <p class="govuk-body">
+        <a href="https://www.tlevels.gov.uk/employers">T levels</a> are a qualification for students aged 16 to 19 who have finished GCSEs. They are a 2-year qualification and the equivalent to 3 A levels.
+      </p>
+      <p class="govuk-body">
+         They have been designed with employers to help young people develop the knowledge, attitude and practical skills to thrive in the workplace.
+      </p>
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+        <p class="govuk-body">
+        No cost but employers may choose to pay the wages and any payments for expenses such as travel and living costs. 
+        </p>
+      <h2 class="govuk-heading-m">Employer responsibility </h2>
+       <p> 
+          Employers must provide:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              a safe work environment
+            </li>
+            <li>
+              opportunities for the student to develop their technical skills within your industry
+            </li>
+            <li>
+              a line manager to support, supervise and mentor the student
+            </li>
+            <li>
+              an induction which includes explaining relevant policies and procedures
+            </li>
+            <li>
+              formal feedback on the student’s progress against the agreed learning goals at the end of the placement
+            </li>
+          </ul>
+        </p>
+      <h2 class="govuk-heading-m"> Benefits of T Levels </h2>
+        <p class="govuk-body">
+          T-levels are available in more than 20 courses, covering 11 skill areas. 
+        </p>
+        <p class="govuk-body">
+          These include:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>          
+              agriculture, environmental and animal care
+            </li>
+            <li>
+            business and administration
+            </li>
+            <li>
+              catering and hospitality
+            </li>
+            <li>
+            creative and design
+            </li>
+            <li>
+            digital and IT
+            </li>
+            <li>
+              education and childcare
+            </li>
+            <li>
+            engineering and manufacturing
+            </li>
+            <li>
+              hair and beauty
+            </li>
+            <li>
+            health and science
+            </li>
+            <li>
+            legal, finance and accounting
+            </li>
+          </ul>
+        </p>
+        <p class="govuk-body">
+         Find out <a href="https://www.tlevels.gov.uk/employers" class="govuk-link">how T Levels can benefit your business</a>.
+        </p>
+          <h2 class="govuk-heading-m"> Case studies </h2>
+          <h3 class="govuk-heading-s"> Version 1 </h3>
+          <p class="govuk-body">
+            IT professional services company Version 1 deliver a range of digital and transformation services to both UK public and private sectors.
+          </p>
+          <p class="govuk-body">
+            With a commitment to support 16-24 year olds as part of their own ‘Community First’ strategy, Version 1 have also included a range of placement and careers development activities public sector contracts. As part of their IT contract with Harrow Council, Version 1 have supported a student from Harrow and Uxbridge College, studying the digital production, design, and development T Level, by hosting an industry placement.
+          </p>
+          <p class="govuk-body">
+            During his 4-week on-site placement, the T Level student worked on a data centre migration project moving workloads from the council’s on-premises Data Centre into Microsoft Azure, as well as developing a governance app for the project using Microsoft Power Apps.
+          </p>
+          <h3 class="govuk-heading-s"> Jude McVitty, Social Value Manager, Version 1 said: </h3>
+        
+        <blockquote>
+          <p class="govuk-body">
+          "Version 1 is passionate about our social commitment to the employability of young people into our industry. We are excited to be able to work with the local college and the Local Authority in partnership to facilitate this – and other future - T Level industry placements that we hope will lead to a successful career in the digital sector. The industry placement supported a local employer; and the student gained experience in the workplace, whilst developing their skills and knowledge of IT.
+          </p>
+
+          <p class="govuk-body">
+          "As we work with a range of public and private sector organisations, we will realise more opportunities to support learners on a range of courses to gain the work experience they need. This benefits the students, our customers, our organisation and our industry; a perfect platform for success."
+          </p>
+        </blockquote>
+        
+        <p class="govuk-body">
+          Read about <a href="https://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-t-level-industry-placements" class="govuk-link">how businesses are using T Levels industry placements</a>.
+        </p>
+   <section  style="margin-left: -15px" class="grey-box govuk-!-margin-top-7"> 
+        <h2 class="govuk-heading-m">Offer an industry placement</h2>
+      <p class="govuk-body">
+       Get started with offering an industry placement.
+      </p>
+      <p class="govuk-body">
+      <a href="https://www.tlevels.gov.uk/employers/next-steps ">Take the next steps with T Levels</a>
+      </p>
+      </section>
+    </div>  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
+  </div>
+
+{% endblock %}
+
