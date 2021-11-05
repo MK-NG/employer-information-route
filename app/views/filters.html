@@ -20,42 +20,74 @@ Find training and employment schemes for your business
     </div>
   
   </div>
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="moj-filter-layout">
 
-      <button id="showHideFilter" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Filter schemes
-      </button>
+  <div class="moj-filter-layout__filter">
 
-    {# <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-        <h2 class="govuk-heading-m">Filter the schemes to fit your business</h2>
-      <section class="grey-box"> 
-      {% include "includes/motivations-filter.html" %}
-      </section>
-      <section class="grey-box"> 
-      {% include "includes/length-filter.html" %}
-      </section>
-       <section class="grey-box"> 
-      {% include "includes/payment-filter.html" %}
-      </section>
-       <section class="grey-box"> 
-      {% include "includes/qualifications-filter.html" %}
-      </section>
-    </div> #}
+    <div class="moj-filter">
 
-{% include "includes/filter_schemes.html" %}
+      <div class="moj-filter__header">
 
-  <div class="govuk-grid-column-two-thirds">
- <h2 id="schemeCounter" style="display:none;" class="govuk-heading-m"> Number of schemes: <span id="numberOfSchemes"></span></h2>
-  <div class="noResults" id="noResults">
-<h2 class="govuk-heading-m"> No schemes </h2>
-  <p class="govuk-body">There are no results matching your answers, remove or change to see schemes. </p>
+        <div class="moj-filter__header-title">
+          <h2 class="govuk-heading-m">Filter schemes to fit your business</h2>
+        </div>
+
+        <div class="moj-filter__header-action">
+
+        </div>
+
+      </div>
+
+      <div class="moj-filter__content">
+       
+
+        <div class="moj-filter__options">
+
+       
+
+        {% include "includes/motivations-filter.html" %}
+      
+        {% include "includes/length-filter.html" %}
+
+        {% include "includes/payment-filter.html" %}
+
+
+          
+          
+        
+
+        
+        </div>
+
+      </div>
+
+    </div>
 
   </div>
-    {# APPRENTICESHIPS #}
+
+  <div class="moj-filter-layout__content">
+
+    <div class="moj-action-bar">
+
+      <div class="moj-action-bar__filter"></div>
+
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+{# SCHEMES NUMBER HERE? #}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="moj-scrollable-pane">
+
+      <div class="moj-scrollable-pane__wrapper">
+      <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+        {# APPRENTICESHIPS #}
 
     <div class="filterDiv train diversify medium long paid none 12 3">
-        <h2 class="govuk-heading-m"><a class="govuk-link" href="/schemes/apprenticeship">Apprenticeships</a></h2>
+        <h2 class="govuk-heading-m govuk-!-padding-top-4"><a class="govuk-link" href="/schemes/apprenticeship">Apprenticeships</a></h2>
           <p class="govuk-body"> 
             For those aged 16 or over, combines working with studying to gain skills and knowledge in a specific job.
           </p>
@@ -269,7 +301,15 @@ Find training and employment schemes for your business
             </p>
           </div>              
         </div>
-</div> 
+
+ 
+
+      </div>
+
+    </div>
+  </div>
+
+
     </div>
   </div>
 
@@ -278,14 +318,24 @@ Find training and employment schemes for your business
 {% block pageScripts %}
 <script>
 
-{# $('#showHideFilter').click(function() {
-   $(this).text(function(i, v){
-               return v === 'Filter schemes' ? 'Hide filter' : 'Filter schemes'
-            })
-    $('#filter').toggle();
-    $('#schemeCounter').toggle();
+new MOJFrontend.FilterToggleButton({
+  bigModeMediaQuery: "(min-width: 48.063em)",
+  startHidden: true,
+  toggleButton: {
+    container: $(".moj-action-bar__filter"),
+    showText: "Filter schemes",
+    hideText: "Hide filter",
+    classes: "govuk-button--secondary",
+  },
+  closeButton: {
+    container: $(".moj-filter__header-action"),
+    text: "Close",
+  },
+  filter: {
+    container: $(".moj-filter"),
+  },
+});
 
-}); #}
 
 </script>
 {% endblock%}
