@@ -50,8 +50,9 @@ Kickstart scheme
        <p class="govuk-body">
        Read about <a href="http://www.gov.uk/government/case-studies/how-employers-are-benefitting-from-the-kickstart-scheme">how employers are using the Kickstart Scheme</a>.
       </p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/huuul2a0zNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/huuul2a0zNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
       <section class="grey-box govuk-!-margin-top-7">
         <h2 class="govuk-heading-m"> Offer Kickstart in your business  </h2>
           <p class="govuk-body">
@@ -60,9 +61,10 @@ Kickstart scheme
         <p><a href="https://secure.dwp.gov.uk/find-a-kickstart-gateway">Apply for Kickstart Scheme grant</a>.
         </p>
       </section>
-    
-    </div>
-     {% include "../includes/schemes.html" %}        
+    </div>  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
   </div>
 
 {% endblock %}
