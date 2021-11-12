@@ -128,3 +128,8 @@
 	.moj-filter-layout__content {
 		overflow-x: hidden;
 	}
+
+	.moj-scrollable-pane::after {
+		box-shadow: none;
+		
+	}
