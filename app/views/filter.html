@@ -34,7 +34,6 @@ Find training and employment schemes for your business
         </div>
 
         <div class="moj-filter__header-action">
-
         </div>
 
       </div>
@@ -44,6 +43,7 @@ Find training and employment schemes for your business
 
         <div class="moj-filter__options">
 
+ <h2 id="schemeCounter" role="alert" class=" grey-box govuk-heading-s" style="padding-bottom: 15px"> Number of schemes: <span id="numberOfSchemes"></span></h2>
        
 
         {% include "includes/motivations-filter.html" %}
@@ -53,13 +53,13 @@ Find training and employment schemes for your business
         {% include "includes/payment-filter.html" %}
 
 
-          
-          
-        
-
-        
+    
+<div class="mobile-button govuk-!-padding-top-4"> 
+<button class="govuk-button" onclick="MOJFrontend.FilterToggleButton" data-module="govuk-button">
+ Apply filters
+</button>
+</div>
         </div>
-
       </div>
 
     </div>
@@ -74,20 +74,19 @@ Find training and employment schemes for your business
 
       <div class="moj-button-menu">
         <div class="moj-button-menu__wrapper">
-{# SCHEMES NUMBER HERE? #}
-{{ govukButton({
+{# {{ govukButton({
   text: "Compare schemes in a table",
   href: "which-schemes",
   classes: "govuk-button--secondary"
-}) }}
+}) }} #}
         </div>
       </div>
 
     </div>
- <h2 id="schemeCounter" class="govuk-heading-s"> Number of schemes: <span id="numberOfSchemes"></span></h2>
+
   <div class="noResults" id="noResults">
 <h2 class="govuk-heading-m govuk-!-padding-top-4"> No schemes </h2>
-  <p class="govuk-body">There are no results matching your answers, remove or change to see schemes. </p>
+  <p class="govuk-body">There are no results matching your answers, remove or change your answers to see schemes. </p>
 </div>
 
     <div class="moj-scrollable-pane">
@@ -160,13 +159,10 @@ Find training and employment schemes for your business
 
     <div class="filterDiv unpaidPlacement short paid unpaid none 12">
             {% include "./includes/front-page-content/training.html" %}    
-      
-
- 
 
       </div>
-
     </div>
+
   </div>
 
 
@@ -176,6 +172,7 @@ Find training and employment schemes for your business
 {% endblock %}
 
 {% block pageScripts %}
+
 <script>
 
 new MOJFrontend.FilterToggleButton({

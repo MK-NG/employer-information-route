@@ -142,9 +142,10 @@ function filter () {
   var y = document.getElementById('schemeCounter')
   if (totalSchemes !== 0) {
     x.style.display = 'none'
-    y.style.display = 'block'
+    // y.style.display = 'block'
   } else {
-    y.style.display = 'none'
+    // y.style.display = 'none'
     x.style.display = 'block'
+
   }
 }
