@@ -139,13 +139,12 @@ function filter () {
   console.log(totalSchemes)
   document.getElementById('numberOfSchemes').innerHTML = totalSchemes
   var x = document.getElementById('noResults')
-  var y = document.getElementById('schemeCounter')
+  // var y = document.getElementById('schemeCounter')
   if (totalSchemes !== 0) {
     x.style.display = 'none'
     // y.style.display = 'block'
   } else {
     // y.style.display = 'none'
     x.style.display = 'block'
-
   }
 }
