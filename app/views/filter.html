@@ -53,6 +53,10 @@ Find training and employment schemes for your business
 
         {% include "includes/payment-filter.html" %}
 
+        <div class="moj-filter__heading-action">
+              <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+            </div>
+
   <div class="mobile-button moj-action-bar__filter" class="govuk-button" style="float:none"></div>
 
     
@@ -84,6 +88,9 @@ Find training and employment schemes for your business
   <div class="noResults" id="noResults">
 <h2 class="govuk-heading-m govuk-!-padding-top-4"> No schemes </h2>
   <p class="govuk-body">There are no results matching your answers, remove or change your answers to see schemes. </p>
+  <div class="moj-filter__heading-action">
+              <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+            </div>
 </div>
 
     <div class="moj-scrollable-pane">
@@ -105,13 +112,6 @@ Find training and employment schemes for your business
     <div class="filterDiv unpaidPlacement short paid unpaid none 12">
     {% include "./includes/front-page-content/tlevels.html" %}    
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-    </div>
-
-
-{# KICKSTART #}
-    <div class="filterDiv train unpaidPlacement short medium paid unpaid none 3">
-          {% include "./includes/front-page-content/kickstart.html" %}    
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </div>
 
         
