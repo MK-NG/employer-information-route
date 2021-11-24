@@ -109,7 +109,7 @@ Find training and employment schemes for your business
 
 {# T Levels #}
 
-    <div class="filterDiv unpaidPlacement short paid unpaid none 12">
+    <div class="filterDiv  diversify unpaidPlacement short paid unpaid none 12">
     {% include "./includes/front-page-content/tlevels.html" %}    
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
     </div>
@@ -131,7 +131,7 @@ Find training and employment schemes for your business
 
 {# SKILLS BOOTCAMP #}
 
-    <div class="filterDiv train unpaidPlacement placement short medium paid unpaid none 12">
+    <div class="filterDiv train unpaidPlacement diversify placement short medium paid unpaid none 12">
      {% include "./includes/front-page-content/skillsbootcamp.html" %}    
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">     
     </div>
@@ -146,15 +146,30 @@ Find training and employment schemes for your business
 
 {# CARE LEAVERS #}
 
-        <div class="filterDiv diversify unpaidPlacement train medium paid unpaid none">
+        <div class="filterDiv diversify unpaidPlacement train medium long paid unpaid none">
             {% include "./includes/front-page-content/careleavers.html" %}    
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 </div>
 
+{# PRISON LEAVERS #}
+
+        <div class="filterDiv diversify train medium long paid none">
+            {% include "./includes/front-page-content/prisonleavers.html" %}    
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</div>
+
+{# HTQs #}
+
+    <div class="filterDiv train paid long none 12">
+            {% include "./includes/front-page-content/htqs.html" %}    
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      </div>
+
 
 {# TRAINING OUTSIDE EMPLOYMENT #}
 
-    <div class="filterDiv unpaidPlacement short paid unpaid none 12">
+    <div class="filterDiv train unpaidPlacement short paid unpaid none 12">
             {% include "./includes/front-page-content/training.html" %}    
 
       </div>
