@@ -31,7 +31,7 @@ Why are government schemes of interest to you?
         <th scope="col" class="govuk-table__header">Cost</th>
         <th scope="col" class="govuk-table__header">Benefits</th>
         <th scope="col" class="govuk-table__header">Time</th>
-        <th scope="col" class="govuk-table__header">Financial incentives</th>
+        {# <th scope="col" class="govuk-table__header">Financial incentives</th> #}
       </tr>
     </thead>
     <tbody class="govuk-table__body nhsuk-table__body">
@@ -45,20 +45,20 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-     Apprentice minimum wage and 5% training contribution depending on business size
+      Apprentice minimum wage and 5% training contribution depending on business size
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
-    You develop a motivated, skilled, and qualified workforce
+     You develop a motivated, skilled, and qualified workforce
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
-   Minimum of 12 months employment
+  Minimum of 12 months employment
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     Yes
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
@@ -84,13 +84,13 @@ Why are government schemes of interest to you?
       6-months
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     Yes
   </td>  
 </tr>
 {% endif %}
 
- {# Kickstart  #}
+ {# traineeships  #}
      {% if data['schemes'] | includes('traineeship') %}
 <tr class="govuk-table__row nhsuk-table__row">
   <td class="govuk-table__cell nhsuk-table__cell">
@@ -99,20 +99,20 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-      No cost but some employers choose to cover living expenses
+      Free government scheme but you may have your own business costs
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
-   Helps you increase your capacity and productivity whilst developing a loyal and talented workforce
+     Helps you increase your capacity and productivity whilst developing a loyal and talented workforce
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
-      6-weeks to 12 months
+      70 to 240 hours work placement
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     Yes
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
@@ -125,20 +125,20 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-      No cost but some employers choose to cover living expenses
+     Free government scheme but you may have your own business costs
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
-   A learner spends 9 weeks with you at no cost
+   Industry placements can save on many of the costs associated with recruitment
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
-      Short term 45-day industry placement
+     Short term 45-day industry placement
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     Yes
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
@@ -156,16 +156,16 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
-  Helps future-proof your business in a rapidly changing labour market and recruit staff with the right training and skills from the outset
+ Helps future-proof your business in a rapidly changing labour market and recruit staff with the right training and skills from the outset
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
       12 to 16-weeks
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     No
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
@@ -179,7 +179,7 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-     No cost, SWAP placements are entirely government-funded
+     Free government scheme but you may have your own business costs
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
@@ -187,12 +187,12 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
-      6-weeks
+      Up to 6-weeks
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     No
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
@@ -206,20 +206,20 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-     No costs
+     Free government scheme but you may have your own business costs
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
-  Allows you to shape a job role that suits your business and the needs of the supported intern and increases your confidence of employing individuals with additional needs
+              Allows you to shape a job role that suits your business and the needs of the supported intern and increases your confidence of employing individuals with additional needs
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
       6 to 12-months
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     No
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
@@ -232,20 +232,20 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-     No costs
+    Free government scheme but you may have your own business costs related to the practical offer you make to care leavers
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
-  Helping care-leavers to move to independent living
+  Helping care-leavers to move to independent living and bring their life skills to enrich your business
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
       Length of time can vary
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     No
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
@@ -259,25 +259,25 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-     [cost content]
+     Free government scheme but you may have your own business costs
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
- [benefit content]
+Developed by employers to upskill existing employees, provide a different recruitment pool to hire new talent and help your company succeed
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
-     [time content]
+    1 to 2 years
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     No
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
 
-{# HTQs  #}
+{# training outside employment  #}
      {% if data['schemes'] | includes('trainingoutsideemployment') %}
 <tr class="govuk-table__row nhsuk-table__row">
   <td class="govuk-table__cell nhsuk-table__cell">
@@ -286,20 +286,20 @@ Why are government schemes of interest to you?
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Cost</span>
-     Courses are fully funded for eligible adults but employees may need time to study and attend classes
+      Courses are fully funded for eligible adults but employees may need time to study and attend classes
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Benefits</span>
- Help improve productivity, and develop a loyal and talented workforce in a rapidly changing labour market
+  Help improve productivity, and develop a loyal and talented workforce in a rapidly changing labour market
   </td>
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Time</span>
    Length of time can vary
   </td>
-  <td class="govuk-table__cell nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Financialincentives</span>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
     No
-  </td>  
+  </td>   #}
 </tr>
 {% endif %}
 
