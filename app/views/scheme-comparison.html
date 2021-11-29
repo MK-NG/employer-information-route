@@ -62,6 +62,8 @@ Why are government schemes of interest to you?
 </tr>
 {% endif %}
 
+
+
       {# Kickstart  #}
      {% if data['schemes'] | includes('kickstart') %}
 <tr class="govuk-table__row nhsuk-table__row">
@@ -89,7 +91,7 @@ Why are government schemes of interest to you?
 {% endif %}
 
  {# Kickstart  #}
-     {% if data['schemes'] | includes('kickstart') %}
+     {% if data['schemes'] | includes('traineeship') %}
 <tr class="govuk-table__row nhsuk-table__row">
   <td class="govuk-table__cell nhsuk-table__cell">
     <span class="nhsuk-table-responsive__heading">Scheme</span>
