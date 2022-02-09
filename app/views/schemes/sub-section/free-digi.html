@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Free training for basic skills (English, maths and digital) 
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+        <h1 class="govuk-heading-l">Free digital training  </h1>
+
+   <p class="govuk-body">
+   Any adult with low digital skills is entitled to fully funded essential digital skills qualifications, at entry-level and level 1. These equip adults with the full range of essential digital skills needed for life, work, and further study.  
+  </p> 
+  <p class="govuk-body">
+  Funding for other digital skills qualifications may also be available but this will depend on local training providers. 
+  </p>
+  <p class="govuk-body">
+  Find out more about free training courses at <a href="http://skillsforlife.campaign.gov.uk">skills for life</a>.    
+        </p>  
+
+
+    </div>  
+     
+  </div>
+
+{% endblock %}
+

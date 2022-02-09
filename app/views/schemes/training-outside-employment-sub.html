@@ -1,0 +1,84 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Free courses and additional training for your employees
+
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set page = 'training-outside-employment' %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+Free courses and additional training for your employees
+
+      </h1>
+
+      <p class="govuk-body">
+      Free training, financial support and career advice available to your workforce.  
+      </p>    
+
+      <p> Some of the benefits of your employees taking a free course or training outside of employment include:  </p> 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+              upskilling your existing employees 
+        </li>
+        <li>
+          progressing your current employees into higher skilled roles
+        </li>
+        <li>
+              filling vacancies or skill shortages within your business  
+        </li>
+        <li>
+                 gaining a workforce with the right knowledge, skills, and behaviours for your company to succeed          
+        </li>
+      </ul>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <h2 class="govuk-heading-m"><a href="/schemes/sub-section/htqs">Higher Technical Qualifications (HTQs) </a> </h2>
+
+        <p class="govuk-body">
+        Higher Technical Qualifications (HTQs) are a high-quality addition to technical training routes, alongside apprenticeships, traineeships, and degrees.  
+        </p>
+      
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+ <h2 class="govuk-heading-m"><a href="/schemes/sub-section/basic"> Free training for basic skills (English, maths and digital) </a>   </h2>
+  
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+   <h3 class="govuk-heading-m"> <a href="/schemes/sub-section/free-digi"> Free digital training  </h3>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+   <h3 class="govuk-heading-m"> <a href="/schemes/sub-section/free-level3"> Free level 3 qualifications for adults </a> </h3>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+   <h3 class="govuk-heading-m"> <a href="/schemes/sub-section/ncs"> National Careers Service  </a> </h3>
+
+   
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+
+    </div>  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
+  </div>
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+National Careers Service 
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+        <h1 class="govuk-heading-l">National Careers Service     </h1>
+ <p class="govuk-body">
+    The National Careers Service is free to use and can help you explore work and skill opportunities for your workforce. 
+        </p> 
+  <p class="govuk-body">
+Find out more about the <a href="https://nationalcareers.service.gov.uk/">National Careers Service and how to contact them</a>. 
+        </p>  
+
+
+
+    </div>  
+     
+  </div>
+
+{% endblock %}
+

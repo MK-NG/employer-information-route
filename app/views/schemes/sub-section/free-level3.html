@@ -1,0 +1,40 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Free level 3 qualifications for adults  
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+        <h1 class="govuk-heading-l">Free level 3 qualifications for adults    </h1>
+<p class="govuk-body">
+        Free level 3 qualifications are government-funded courses for any adult aged 19 and over, who are looking to achieve their first full level 3 qualification or earning below national minimum wage.  
+        </p> 
+  <p class="govuk-body">
+ A full level 3 qualification is equivalent to an advanced technical certificate, diploma, or A levels. 
+  </p>
+  <p class="govuk-body">
+The Free Courses for jobs offer and the qualification list has been developed with industry and will be regularly reviewed.  
+        </p>  
+
+
+
+
+    </div>  
+     
+  </div>
+
+{% endblock %}
+
