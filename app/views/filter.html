@@ -17,9 +17,10 @@ Find training and employment schemes for your business
       <p>
         A range of government programmes, are available for employers who are considering hiring employees, offering work experience or upskilling existing staff. 
         Some of which offer financial incentives.
+
+          {{ pageTitle }} 
       </p>
     </div>
-  
   </div>
 <div class="moj-filter-layout">
 
@@ -205,6 +206,10 @@ new MOJFrontend.FilterToggleButton({
   },
 });
 
+
+var button = document.getElementsByClassName("moj-action-bar__filter").innerHTML;
+
+console.log(button)
 
 
 
