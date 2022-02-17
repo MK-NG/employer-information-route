@@ -1,0 +1,99 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Why are government schemes of interest to you?
+{% endblock %}
+
+{% block beforeContent %} 
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+      
+      <form method="post" action="scheme-comparison"> 
+
+
+  {{ govukCheckboxes({
+    idPrefix: "schemes",
+    name: "schemes",
+    fieldset: {
+      legend: {
+        text: "Which schemes would you like to compare in more detail?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    hint: {
+      text: "Select all that apply"
+    },
+    items: [
+      {
+        value: "apprenticeships",
+        text: "Apprenticeships",
+        checked: true if data['schemes'] | includes('apprenticeships')
+      }, 
+      {
+        value: "traineeship",
+        text: "Traineeship",
+        checked: true if data['schemes'] | includes('traineeship')
+      }, 
+      {
+        value: "tlevels",
+        text: "Industry Placements: T Levels",
+        checked: true if data['schemes'] | includes('tlevels')
+      }, 
+      {
+        value: "skillsbootcamp",
+        text: "Skills Bootcamp",
+        checked: true if data['schemes'] | includes('skillsbootcamp')
+      }, 
+      {
+        value: "swap",
+        text: "Sector-based Work Academy Programme(SWAP)",
+        checked: true if data['schemes'] | includes('swap')
+      }, 
+      {
+        value: "supportedinternship",
+        text: "Supported Internships for learners with additional needs",
+        checked: true if data['schemes'] | includes('supportedinternship')
+      }, 
+      {
+        value: "careleaverscovenant",
+        text: "Care-Leavers Covenant",
+        checked: true if data['schemes'] | includes('careleaverscovenant')
+      }, 
+      {
+        value: "htqs",
+        text: "Higher Technical Qualifications",
+        checked: true if data['schemes'] | includes('htqs')
+      }, 
+      {
+        value: "trainingoutsideemployment",
+        text: "Training outside of Employment",
+        checked: true if data['schemes'] | includes('trainingoutsideemployment')
+      } 
+    ]
+  }) }}
+      {{ govukButton({
+        text: "Continue"
+        }) }}
+
+
+      </form>
+
+     
+      
+    </div>
+  </div>
+
+{% endblock %}

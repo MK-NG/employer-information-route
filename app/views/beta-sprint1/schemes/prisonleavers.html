@@ -1,0 +1,93 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Employing prisoners and prison leavers
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set page = 'prison' %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Employing prisoners and prison leavers
+      </h1>
+
+      <p class="govuk-body">
+      New Futures Network (NFN) arranges partnerships between prisons and employers in England and Wales. These partnerships help you:
+      </p>    
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+         fill skills gaps in your business
+        </li>
+        <li>
+          increase staff retention
+        </li>
+        <li>
+         transform prison leavers lives
+        </li>
+      </ul>
+     
+      
+         <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+    Free government scheme but you may have your own business costs. If you recruit someone you must pay <a href="https://www.gov.uk/national-minimum-wage-rates">the minimum wage</a>.
+      </p>
+
+         <h2 class="govuk-heading-m"> Employer responsibilities </h2>
+         <p class="govuk-body">
+         Employers must provide:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a safe work environment
+          </li>
+          <li>
+            a line manager to support, supervise and mentor
+          </li>                  
+          <li>
+            an induction which includes explaining relevant policies and procedures
+          </li>
+        </ul>
+      </p>
+      
+
+     <h2 class="govuk-heading-m"> Benefits</h2>
+        <p class="govuk-body">
+     Over 400 businesses already work in partnership with prisons to provide work and employment opportunities.
+        </p>
+
+        <p class="govuk-body">Of those surveyed, more than 80% of employers positively rated those they employed as reliable and hard-working. </p>
+
+        <h2 class="govuk-heading-m">Case studies </h2>
+
+        <p class="govuk-body">
+        Read about <a href="https://newfuturesnetwork.gov.uk/case-studies">how businesses are working with serving prisoners and hiring prison leavers.</a>
+        </p>   
+        
+
+<section class="grey-box govuk-!-margin-top-7">
+        <h2 class="govuk-heading-m"> Offer prisoners and prison leavers employment</h2>
+          <p class="govuk-body">
+          <a href="https://newfuturesnetwork.gov.uk/register/">Register your interest on the New Futures Network.</a> 
+          </p>   
+          <p class="govuk-body">
+         A member of the team will be in touch to discuss the process. 
+          </p>
+</section>
+    </div>  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
+  </div>
+
+{% endblock %}
+

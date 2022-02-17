@@ -1,0 +1,319 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Why are government schemes of interest to you?
+{% endblock %}
+
+{% block beforeContent %} 
+
+    {{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">    
+    
+     <h1 class="govuk-heading-l">
+       Comparison of schemes
+     </h1> 
+
+<div class="nhsuk-table-container">
+  <table data-test="admin-participants-table" class="govuk-table nhsuk-table-responsive">
+    <thead  class="nhsuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Scheme</th>
+        <th scope="col" class="govuk-table__header">Cost</th>
+        <th scope="col" class="govuk-table__header">Benefits</th>
+        <th scope="col" class="govuk-table__header">Time</th>
+        {# <th scope="col" class="govuk-table__header">Financial incentives</th> #}
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body nhsuk-table__body">
+     
+        {# apprenticeships #}
+     {% if data['schemes'] | includes('apprenticeships') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/apprenticeship"> Apprenticeships </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+      Apprentice minimum wage and 5% training contribution depending on business size
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+     You develop a motivated, skilled, and qualified workforce
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+  Minimum of 12 months employment
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    Yes
+  </td>   #}
+</tr>
+{% endif %}
+
+
+
+      {# Kickstart  #}
+     {% if data['schemes'] | includes('kickstart') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/kickstart"> Kickstart </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+      No costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+    Support young people to gain valuable experience and give them opportunities to start a new career in your industry
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      6-months
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    Yes
+  </td>  
+</tr>
+{% endif %}
+
+ {# traineeships  #}
+     {% if data['schemes'] | includes('traineeship') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/traineeships"> Traineeships </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+      Free government scheme but you may have your own business costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+     Helps you increase your capacity and productivity whilst developing a loyal and talented workforce
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      70 to 240 hours work placement
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    Yes
+  </td>   #}
+</tr>
+{% endif %}
+
+ {# T Levels  #}
+     {% if data['schemes'] | includes('tlevels') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/tlevels"> Industry Placements: T Levels </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     Free government scheme but you may have your own business costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+   Industry placements can save on many of the costs associated with recruitment
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+     Short term 45-day industry placement
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    Yes
+  </td>   #}
+</tr>
+{% endif %}
+
+
+{# Skills Bootcamp  #}
+     {% if data['schemes'] | includes('skillsbootcamp') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/bootcamp"> Skills Bootcamp </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     No cost unless self-employed
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+ Helps future-proof your business in a rapidly changing labour market and recruit staff with the right training and skills from the outset
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      12 to 16-weeks
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    No
+  </td>   #}
+</tr>
+{% endif %}
+
+
+{# SWAP  #}
+     {% if data['schemes'] | includes('swap') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/swap"> Sector-based Work Academy Programme(SWAP) </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     Free government scheme but you may have your own business costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+  Helps you recruit or train staff through fully-funded pre-employment training
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      Up to 6-weeks
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    No
+  </td>   #}
+</tr>
+{% endif %}
+
+
+{# Supported Internship  #}
+     {% if data['schemes'] | includes('supportedinternship') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/supportedinternship"> Supported Internships for learners with additional needs </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     Free government scheme but you may have your own business costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+              Allows you to shape a job role that suits your business and the needs of the supported intern and increases your confidence of employing individuals with additional needs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      6 to 12-months
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    No
+  </td>   #}
+</tr>
+{% endif %}
+
+{# Care-leavers Covenant  #}
+     {% if data['schemes'] | includes('careleaverscovenant') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/clc"> Care-leavers covenant </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+    Free government scheme but you may have your own business costs related to the practical offer you make to care leavers
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+  Helping care-leavers to move to independent living and bring their life skills to enrich your business
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+      Length of time can vary
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    No
+  </td>   #}
+</tr>
+{% endif %}
+
+
+{# HTQs  #}
+     {% if data['schemes'] | includes('htqs') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/htqs"> Higher Technical Qualifications (HTQs) </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+     Free government scheme but you may have your own business costs
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+Developed by employers to upskill existing employees, provide a different recruitment pool to hire new talent and help your company succeed
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+    1 to 2 years
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    No
+  </td>   #}
+</tr>
+{% endif %}
+
+
+{# training outside employment  #}
+     {% if data['schemes'] | includes('trainingoutsideemployment') %}
+<tr class="govuk-table__row nhsuk-table__row">
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Scheme</span>
+             <a href="schemes/training-outside-employment"> Training outside of employment  </a>       
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Cost</span>
+      Courses are fully funded for eligible adults but employees may need time to study and attend classes
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Benefits</span>
+  Help improve productivity, and develop a loyal and talented workforce in a rapidly changing labour market
+  </td>
+  <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Time</span>
+   Length of time can vary
+  </td>
+  {# <td class="govuk-table__cell nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Financial incentives</span>
+    No
+  </td>   #}
+</tr>
+{% endif %}
+
+  </tbody>
+  </table>
+</div>
+
+
+
+    <p class="govuk-body">
+    <a href="filter" class="govuk-link"> Return to list of all schemes </a>
+    </p>
+      
+    </div>
+  </div>
+
+{% endblock %}

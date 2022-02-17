@@ -1,0 +1,75 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Higher Technical Qualifications (HTQs)
+
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+  
+        <h1 class="govuk-heading-l">Higher Technical Qualifications (HTQs) </h1>
+
+        <p class="govuk-body">
+        Higher Technical Qualifications (HTQs) are a high-quality addition to technical training routes, alongside apprenticeships, traineeships, and degrees.  
+        </p>
+
+        <p class="govuk-body">
+         HTQs have been developed by employers and awarding bodies to help you upskill existing employees and provide a different recruitment pool to hire new talent.
+        </p>
+
+        <p class="govuk-body">
+        You can support an employee to undertake an HTQ. The cost is dependent on the course and the provider.  
+        </p>
+
+        <p class="govuk-body"> 
+       They are: 
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+                new and existing Level 4 and 5 qualifications (such as Higher National Diplomas, Foundation Degrees, Diploma Higher Education) 
+          </li>
+          <li>
+              approved by the Institute for Apprenticeships and Technical Education, against employer-led occupational standards 
+          </li>
+            <li>
+                 classroom based and do not require an in-work placement  
+          </li>
+        </ul>
+        </p>
+
+
+
+<p class="govuk-body">
+The first Digital HTQs will be available for teaching from 2022, leading to higher-level occupations like Network Engineer, Software Developer and Data Analyst. 
+</p>
+
+<p class="govuk-body">
+Health and Science and Construction qualifications will be available for teaching from 2023, with a full roll-out of further industrial sectors over a four-year period. 
+</p>
+   <section class="grey-box govuk-!-margin-top-7">
+  <p class="govuk-body"> <b> Offer a HTQ </b> </p> 
+  <p class="govuk-body"> <a href="#"> Learn more and get started with HTQs</a>.</p>
+</section>
+
+
+
+
+
+
+    </div>  
+     
+  </div>
+
+{% endblock %}
+

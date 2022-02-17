@@ -1,0 +1,83 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Care Leavers Covenant
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+{% set page = 'clc' %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Care Leavers Covenant
+      </h1>
+
+      <p class="govuk-body">
+      The Care-leaver Covenant is a way companies can support 16 to 25-year-olds leaving care to become independent.
+      </p>    
+
+      <p class="govuk-body">
+        Organisations can pledge support including apprenticeships, work experience or free or discounted goods or services. 
+      </p>
+
+      
+         <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+     You may have your own business costs related to the practical offer your business makes to care leavers.
+      </p>
+
+         <h2 class="govuk-heading-m"> Employer responsibilities </h2>
+         <p class="govuk-body">
+         Employers must provide:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a safe work environment
+          </li>
+          <li>
+            an induction which includes explaining relevant policies and procedures
+          </li>
+          <li>
+            practical help that makes a difference to the life of a care leaver
+          </li>                  
+        </ul>
+      </p>
+      
+
+     <h2 class="govuk-heading-m"> Benefits of a Care Leavers Covenant</h2>
+        <p class="govuk-body">
+      You create and support a diverse and loyal workforce for your business.
+        </p>
+        <h2 class="govuk-heading-m">Case studies </h2>
+
+        <p class="govuk-body">
+        Read about <a href="https://mycovenant.org.uk/covenant-stories/">how companies have been making a difference to the lives of care leavers</a>
+        </p>   
+        
+
+<section class="grey-box govuk-!-margin-top-7">
+        <h2 class="govuk-heading-m"> Offer a Care Leavers Covenant</h2>
+          <p class="govuk-body">
+          <a href="https://mycovenant.org.uk/support-the-covenant/organisation-sign-up/">Find out how to join the Care Leavers Covenant</a> and tailor what opportunities your business would like to offer to care leavers.
+          </p>   
+          <p class="govuk-body">
+          Alternatively, contact the Care Leavers Covenant via telephone on 0800 077 3557.
+          </p>
+</section>
+    </div>  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
+  </div>
+
+{% endblock %}
+

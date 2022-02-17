@@ -24,3 +24,11 @@ $govuk-assets-path: '/govuk/assets/';
 .app-width-container--wide {
     @include govuk-width-container(1000px);
   }
+
+  .govuk-header {
+    background: #23145f;
+  }
+
+  .govuk-header__container {
+    border-bottom: 10px solid #f4d80d
+  }

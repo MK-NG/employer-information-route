@@ -1,0 +1,133 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Apprenticeships
+{% endblock %}
+
+{% block beforeContent %} {{ super() }}
+
+{{ govukBackLink ({
+        text: 'Back',
+        href: 'javascript:history.back()'
+    }) }}
+
+{% endblock %}
+
+{% set page = 'apprenticeship' %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apprenticeships
+      </h1>
+ 
+     <p class="govuk-body">
+       Applies to England
+      </p> 
+
+      <p class="govuk-body">
+      Apprenticeships are for those aged 16 or over and combine working with studying to gain skills and knowledge in a job role.
+      </p>    
+
+      <p class="govuk-body">
+     Apprentices can be new or current employees.
+      </p>
+
+      <p class="govuk-body">
+     Your apprentice must: 
+     <ul class="govuk-list govuk-list--bullet">
+       <li>
+         work with experienced staff
+       </li>
+       <li>
+         learn job-specific skills
+       </li>
+       <li>
+         get time for training or study during their working week (at least 20% of their normal working hours)
+       </li>
+     </ul>
+      </p>
+
+      <h2 class="govuk-heading-m"> Employer costs </h2>
+      <p class="govuk-body">
+        You must pay apprentices <a href="https://www.gov.uk/national-minimum-wage-rates"> the minimum wage</a>.
+        </p>
+      <p class="govuk-body">
+          You may have to contribute 5% of the apprentice’s training and assessment costs – depending on the size of your business and the age of your apprentice. 
+      </p>
+
+
+      <h2 class="govuk-heading-m"> Employer responsibilities </h2>
+      <p class="govuk-body">
+      Employers must provide:
+        </p>
+      <p class="govuk-body">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            a safe work environment
+          </li>
+          <li>
+            an induction which includes explaining relevant policies and procedures
+          </li>
+          <li>
+            opportunities for the student to develop their technical skills within your industry
+          </li>
+           <li>
+            20% ‘Off-the-job’ training delivered by a training provider during your apprentice's normal working hours
+          </li>
+           <li>
+            ‘On-the-job’ training and additional support to ensure your apprentice’s success
+          </li>
+        </ul>
+      </p>
+       <p class="govuk-body">
+      Employers must also have:
+        </p>
+        <p class="govuk-body">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              a signed apprenticeship agreement and apprenticeship commitment statement from the learner and training provider
+            </li>          
+          </ul>
+        <p>
+
+      <h2 class="govuk-heading-m"> Benefits of apprenticeships </h2>
+  <p class="govuk-body">
+     Find out <a href="https://www.apprenticeships.gov.uk/">how apprenticeships can benefit your business</a>.
+  </p>
+        <h2 class="govuk-heading-m"> Case studies </h2>
+  <p class="govuk-body">
+     Read about <a href="http://www.gov.uk/government/case-studies/how-employers-are-making-the-most-of-apprenticeship-incentives">how businesses are using incentive payments to hire apprentices</a>.
+  </p>
+
+     <section style="margin-left: -15px" class="grey-box govuk-!-margin-top-7">
+        <h2 class="govuk-heading-m"> Offer an apprenticeship</h2>
+  <p class="govuk-body">
+  Get started with offering an apprenticeship.
+</p>
+<p>
+<a href="https://www.apprenticeships.gov.uk/employers" class="govuk-link"> Hire an apprentice </a>
+
+<p class="govuk-body"> Alternatively, call 08000 150 400 </p>
+</section>
+   
+    </div>
+
+  
+      <div class="govuk-grid-column-one-third">
+        {% include "../includes/schemes.html" %}        
+      </div>
+   
+
+
+</div>
+          
+         
+
+{% endblock %}
+
+
+
