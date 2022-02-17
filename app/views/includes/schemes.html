@@ -3,49 +3,94 @@
         <p class="govuk-body"> 
         <ul class="govuk-list">
         {% if page != 'apprenticeship' %}
-          <li>
-            <a href="apprenticeship"> Apprenticeships </a>
+            <li class="nav-list">
+              <a href="apprenticeship">  Apprenticeships 
+         {% else %} 
+            <li class="nav-list current-page">
+              <a class="current-page" href="apprenticeship">   Apprenticeships 
+          {% endif %}   
+        </a>
           </li>
-        {% endif %}   
-        {% if page != 'traineeships' %}
-          <li>
-            <a href="traineeships"> Traineeships </a>
-          </li>
-        {% endif %}
+
         {% if page != 'tlevels' %}
-          <li>
-            <a href="tlevels"> Industry placements: T Levels </a>
-          </li>
+           <li class="nav-list">
+            <a href="tlevels"> Industry placements: T Levels 
+          {% else %} 
+              <li class="nav-list current-page">
+             <a class="current-page" href="tlevels">   Industry placements: T Levels
         {% endif %}
-        {% if page != 'skillsbootcamp' %}
-          <li>
-            <a href="bootcamp"> Skills Bootcamps </a>
+        </a>
           </li>
-        {% endif %}
+
          {% if page != 'swap' %}
-          <li>
-            <a href="swap"> Sector-based Work Academy Programme (SWAP) </a>
-          </li>
+           <li class="nav-list">
+            <a href="swap"> Sector-based Work Academy Programme (SWAP)
+        {% else %} 
+            <li class="nav-list current-page">
+             <a class="current-page" href="swap">  Sector-based Work Academy Programme (SWAP)
         {% endif %}
+        </a>
+          </li>
+
+        {% if page != 'skillsbootcamp' %}
+           <li class="nav-list">
+            <a href="bootcamp"> Skills Bootcamps 
+        {% else %} 
+             <li class="nav-list current-page">
+             <a class="current-page" href="bootcamp">  Skills Bootcamps
+        {% endif %}
+        </a>
+          </li>
+
+        {% if page != 'traineeships' %}
+           <li class="nav-list">
+            <a href="traineeships"> Traineeships 
+        {% else %} 
+            <li class="nav-list current-page">
+             <a class="current-page" href="traineeships">  Traineeships
+        {% endif %}
+        </a>
+          </li>
+
          {% if page != 'supportedinternship' %}
-          <li>
-            <a href="supportedinternship"> Supported Internship for learners with additional needs </a>
+           <li class="nav-list">
+            <a href="supportedinternship"> Supported Internships for learners with an education, health and care plan
+          {% else %} 
+             <li class="nav-list current-page">
+             <a class="current-page" href="supportedinternship">   Supported Internships for learners with an education, health and care plan
+          {% endif %}
+        </a>
           </li>
-        {% endif %}
-           {% if page != 'prisoners' %}
-          <li>
-            <a href="prisonleavers"> Employing prisoners and prison leavers </a>
-          </li>
-        {% endif %}
+
         {% if page != 'clc' %}
-          <li>
-            <a href="clc"> Care-leavers Covenant </a>
-          </li>
+           <li class="nav-list">
+            <a href="clc"> Care-leaver covenant 
+             {% else %} 
+              <li class="nav-list current-page">
+             <a class="current-page" href="clc"> Care-leaver covenant 
         {% endif %}   
-        {% if page != 'training-outside-employment' %}
-          <li>
-            <a href="training-outside-employment"> Free courses and additional training for your employees  </a>
+          </a>
           </li>
+
+           {% if page != 'prison' %}
+           <li class="nav-list">
+            <a href="prisonleavers"> Employing prisoners and prison leavers 
+             {% else %}
+               <li class="nav-list current-page">
+             <a class="current-page" href="prisonleavers"> Employing prisoners and prison leavers 
         {% endif %}
+          </a>
+          </li>
+
+        {% if page != 'training-outside-employment' %}
+           <li class="nav-list">
+            <a href="training-outside-employment"> Free courses and additional training for your employees 
+             {% else %} 
+              <li class="nav-list current-page">
+             <a class="current-page" href="training-outside-employment"> Free courses and additional training for your employees 
+        {% endif %}
+        </a>
+          </li>
+
         </ul>
         </p>
